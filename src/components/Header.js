@@ -14,6 +14,7 @@ function Header() {
             </Typography>
             <Button variant="contained" color="primary">Search locations
             </Button>
+            <p>Sample text</p>
         </div>
     );
 }
