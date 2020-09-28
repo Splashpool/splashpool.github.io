@@ -3,4 +3,17 @@
 .custom-font {
     font-family: "Montserrat", sans-serif;
 }
-  
+
+.custom-colors {
+    background-color: black;
+    color: #1fb0f5;
+}
+
+.custom-colors2 {
+    background-color: black;
+    color: #ffffff;
+}
+.custom-size {
+    height: 12rem;
+    width: 14rem;
+}

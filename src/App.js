@@ -5,8 +5,10 @@ import LocationListing from './components/LocationListing';
 import "fontsource-montserrat";
 import Search from './components/Search'
 
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
-function App() {
+
+export default function App() {
 
     const [locations, setlocation] = useState([
         { name: "london", longitude: "51.5074", latitude: " 0.1278", status: "Drinkable" },
@@ -17,16 +19,58 @@ function App() {
     ]);
 
     return (
-        <div className="App">
-            <Header />
-            <LocationListing locationData={locations} />
+
+        <Router>
+            <div className="App">
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/search">Search</Link>
+                        </li>
+                        <li>
+                            <Link to="/locationListing">LocationListing</Link>
+                        </li>
+                    </ul>
+                </nav>
+
+                <Switch>
+                    <Route path="/search">
+                        <Search />
+                    </Route>
+                    <Route path="/locationlisting">
+                        <LocationListing />
+                    </Route>
+                    <Route path="/">
+                        <Header />
+                    </Route>
+                </Switch>
+                {/* <Header /> */}
+            </div>      
+        </Router>
+
+        // <div className="App">
+        //     <Header />
+        //     <LocationListing locationData={locations} />
             
-            {/* so depends on where we call "Search locations" from - we might not 
-                need Search from the app main screen.
-            */}
-            <Search />
-        </div>
+        //     {/* so depends on where we call "Search locations" from - we might not 
+        //         need Search from the app main screen.
+        //     */}
+        //     <Search />
+        // </div>
     );
 }
 
-export default App;
+//export default App;
+
+// function Home() {
+//     return <h2>Home</h2>;
+// }
+// function About() {
+//     return <h2>About</h2>;
+// }
+// function Users() {
+//     return <h2>Users</h2>;
+// }
