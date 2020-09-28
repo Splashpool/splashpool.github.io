@@ -6,15 +6,16 @@ import './Header.css';
 
 function Header() {
     return (
-        <div className="Header">
-            <img className="custom-colors custom-size" src={waterDroplet}/>
-            <Typography variant="h1" component="h2" gutterBottom className="custom-font custom-colors">
+        <div className="Header spl--custom-colors">
+            {/* need to sort out the icon and it's colors for background and foreground */}
+            <img className="spl--custom-colors spl--custom-size" alt="water droplet" src={waterDroplet}/>
+            <Typography variant="h1" component="h2" gutterBottom className="spl--custom-font spl--custom-colors">
                 Welcome to Oasis
             </Typography>
-            <Typography variant="body1" gutterBottom className="custom-colors2">
+            <Typography variant="body1" gutterBottom className="spl--custom-colors2">
                 Find for your nearest drinking water and toilet facilities
             </Typography>
-            <Button variant="contained" color="primary" className="custom-colors">Search locations
+            <Button variant="contained" color="primary" className="spl--custom-colors">Search locations
             </Button>
         </div>
     );
