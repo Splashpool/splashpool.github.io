@@ -41,7 +41,7 @@ export default function App() {
                         <Search />
                     </Route>
                     <Route path="/locationlisting">
-                        <LocationListing />
+                        <LocationListing locationData={locations} />
                     </Route>
                     <Route path="/">
                         <Header />
