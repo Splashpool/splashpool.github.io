@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { StylesProvider } from "@material-ui/core/styles";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from './components/Header';
+import Nav from './components/Nav';
 import LocationListing from './components/LocationListing';
 import "fontsource-montserrat";
+
 
 
 function App() {
@@ -16,8 +19,10 @@ function App() {
   ]);
 
   return (
+    <StylesProvider injectFirst>
     <Router>
       <div className="App">
+        <Nav />
         <div>
           <nav>
             <ul>
@@ -28,7 +33,10 @@ function App() {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/users">Users</Link>
+                <Link to="/locations">Locations</Link>
+              </li>
+              <li>
+                <Link to="/test">test</Link>
               </li>
             </ul>
           </nav>
@@ -37,33 +45,30 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/locations">
+            <LocationListing locationData={locations} />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route exact={true} path="/">
+            <Header />
+          </Route>
+          <Route path="/test">
+            <Test />
           </Route>
         </Switch>
         </div>
-        <Header />
-        <LocationListing locationData={locations} />
       </div>
     </Router>
+    </StylesProvider>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
 function About() {
   return <h2>About</h2>;
 }
-
-function Users() {
-  return <h2>Users</h2>;
+function Test() {
+  return <h2>Test</h2>;
 }
-
 
 
 export default App;
