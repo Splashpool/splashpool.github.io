@@ -5,9 +5,9 @@ import SwitchesGroup from "./SwitchesGroup";
 
 function Filter() {
   return (
-    <Grid container className="custom-font">
+    <Grid container>
       <Grid item xs={12} md={8}>
-        <SwitchesGroup className="custom-font"> </SwitchesGroup>
+        <SwitchesGroup> </SwitchesGroup>
       </Grid>
     </Grid>
   );

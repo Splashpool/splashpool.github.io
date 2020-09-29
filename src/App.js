@@ -16,6 +16,7 @@ import LocationDetails from "./components/LocationDetails";
 import "fontsource-montserrat";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
+import Map from "./components/Map";
 
 function App() {
   const [locations, setlocation] = useState([
@@ -97,17 +98,8 @@ function App() {
 
           {/* <LocationListing locationData={locations} /> */}
           <LocationDetails />
-
-          <div class="mui-row">
-            <div class="mui-col-md-8 mui-col-md-offset-2">
-              <img src="../public/placeholder.png" class="image" />
-            </div>
-          </div>
-          <div class="mui-row">
-            <div class="mui-col-md-8 mui-col-md-offset-2">
-              <Filter />
-            </div>
-          </div>
+          <Map />
+          <Filter />
         </div>
       </Router>
     </StylesProvider>

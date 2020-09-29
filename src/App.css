@@ -10,7 +10,7 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -41,12 +41,11 @@ body {
   }
 }
 
-
 .MuiButton-root {
-  background-color:  hsl(199, 91%, 54%);
+  background-color: hsl(199, 91%, 54%);
 }
 .MuiButton-root:hover {
-  background-color:  hsl(199, 91%, 54%);
+  background-color: hsl(199, 91%, 54%);
 }
 .MuiButton-label {
   color: #232324;
@@ -60,14 +59,15 @@ body {
 }
 
 .spl-root {
-  max-width:100%;
- 
+  max-width: 100%;
 }
-.spl-media{
-  
+.spl-media {
   height: 25rem;
   text-align: center;
-
 }
 
-
+.spl-filterTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: white;
+}
