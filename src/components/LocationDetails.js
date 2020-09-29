@@ -37,9 +37,9 @@ function LocationDetails() {
 
                 <Card className="spl-root">
                     <CardActionArea>
-                        <CardMedia
+                        <img
                             className="spl-media"
-                            image="https://images.freeimages.com/images/large-previews/113/water-from-spring-1426253.jpg"
+                            src="https://images.freeimages.com/images/large-previews/113/water-from-spring-1426253.jpg"
                             title="Contemplative Reptile"
                         />
                         <CardContent>
