@@ -3,7 +3,6 @@ import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-//import FormHelperText from "@material-ui/core/FormHelperText";
 import Switch from "@material-ui/core/Switch";
 
 export default function SwitchesGroup() {
@@ -24,6 +23,7 @@ export default function SwitchesGroup() {
           control={
             <Switch
               checked={state.water}
+              color="primary"
               onChange={handleChange}
               name="water"
             />
@@ -34,6 +34,7 @@ export default function SwitchesGroup() {
           control={
             <Switch
               checked={state.toilet}
+              color="primary"
               onChange={handleChange}
               name="toilet"
             />

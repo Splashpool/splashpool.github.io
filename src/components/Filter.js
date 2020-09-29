@@ -2,7 +2,6 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 //import Button from "@material-ui/core/Button";
 import SwitchesGroup from "./SwitchesGroup";
-import "./Filter.css";
 
 function Filter() {
   return (
