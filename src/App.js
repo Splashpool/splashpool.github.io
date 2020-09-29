@@ -10,6 +10,7 @@ import {
   useParams,
 } from "react-router-dom";
 import Header from "./components/Header";
+import Login from "./components/Login";
 import Nav from "./components/Nav";
 import LocationListing from "./components/LocationListing";
 import LocationDetails from "./components/LocationDetails";
@@ -45,6 +46,7 @@ function App() {
       status: "Uknown",
     },
   ]);
+  
 
   return (
     <StylesProvider injectFirst>
@@ -58,26 +60,20 @@ function App() {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
                   <Link to="/locations">Locations</Link>
                 </li>
                 <li>
                   <Link to="/search">Search Locations</Link>
                 </li>
                 <li>
-                  <Link to="/test">test</Link>
+                  <Link to="/location-listing">Location</Link>
                 </li>
                 <li>
-                  <Link to="/LocationListing ">Location</Link>
+                  <Link to="/login">Login</Link>
                 </li>
               </ul>
             </nav>
             <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
               <Route path="/locations">
                 <LocationListing locationData={locations} />
               </Route>
@@ -87,11 +83,11 @@ function App() {
               <Route path="/search">
                 <Search />
               </Route>
-              <Route path="/test">
-                <Test />
-              </Route>
-              <Route path="/LocationListing">
+              <Route path="/location-listing">
                 <LocationListing locationData={locations} />
+              </Route>
+              <Route path="/login">
+                <Login />
               </Route>
             </Switch>
           </div>
@@ -104,13 +100,6 @@ function App() {
       </Router>
     </StylesProvider>
   );
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-function Test() {
-  return <h2>Test</h2>;
 }
 
 export default App;
