@@ -2,12 +2,10 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import waterDroplet from './images/water_droplet.png';
-import './Header.css';
 
 function Header() {
     return (
         <div className="Header">
-            <img className="spl--custom-size" alt="water droplet" src={waterDroplet}/>
             <Typography variant="h2" component="h1" gutterBottom className="custom-font">
                 Welcome to Oasis
             </Typography>
