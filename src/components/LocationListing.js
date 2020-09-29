@@ -7,12 +7,8 @@ function LocationListing({
 }) {
     return (
 
-        locationData.map((location) =>
-            <
-            Location locations = {
-                location
-            }
-            />
+        locationData.map((location ,index) =>
+            < Location  key={index} locations = { location } />
         )
 
 

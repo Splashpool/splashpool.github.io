@@ -4,3 +4,13 @@
     font-family: "Montserrat", sans-serif;
 }
   
+.spl-root {
+    max-width: 30rem;
+   
+}
+.spl-media {
+    height: 25rem;
+}
+.Radio{
+    color: dodgerblue;
+}

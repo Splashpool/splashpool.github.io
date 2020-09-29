@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link ,useRouteMatch,
+  useParams} from "react-router-dom";
 import Header from './components/Header';
 import LocationListing from './components/LocationListing';
+import LocationDetails from './components/LocationDetails';
 import "fontsource-montserrat";
 
 
@@ -30,6 +32,9 @@ function App() {
               <li>
                 <Link to="/users">Users</Link>
               </li>
+              <li>
+                <Link to="/LocationListing ">Location</Link>
+              </li>
             </ul>
           </nav>
 
@@ -43,10 +48,14 @@ function App() {
           <Route path="/">
             <Home />
           </Route>
+          <Route path="/LocationListing">
+          <LocationListing locationData={locations} />
+          </Route>
         </Switch>
         </div>
         <Header />
-        <LocationListing locationData={locations} />
+        {/* <LocationListing locationData={locations} /> */}
+        <LocationDetails/>
       </div>
     </Router>
   );
