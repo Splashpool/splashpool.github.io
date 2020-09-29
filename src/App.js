@@ -8,18 +8,28 @@ import Nav from './components/Nav';
 import LocationListing from './components/LocationListing';
 import LocationDetails from './components/LocationDetails';
 import "fontsource-montserrat";
+import Search from './components/Search'
 
 
 
+<<<<<<< HEAD
 function App() {
   const [locations, setlocation] = useState([
     { name: "london", longitude: "51.5074", latitude: " 0.1278", status: "Drinkable" },
     { name: "Santiago", longitude: "54.5074", latitude: " 7.1278", status: "Need traitment" },
     { name: "Santiago", longitude: "94.5074", latitude: " 7.1278", status: "Drinkable" },
     { name: "Santiago", longitude: "04.5074", latitude: " 7.1278", status: "Uknown" }
+=======
+    const [locations, setlocation] = useState([
+        { name: "london", longitude: "51.5074", latitude: " 0.1278", status: "Drinkable" },
+        { name: "Santiago", longitude: "54.5074", latitude: " 7.1278", status: "Need traitment" },
+        { name: "Santiago", longitude: "94.5074", latitude: " 7.1278", status: "Drinkable" },
+        { name: "Santiago", longitude: "04.5074", latitude: " 7.1278", status: "Uknown" }
+>>>>>>> origin/chi-branch
 
-  ]);
+    ]);
 
+<<<<<<< HEAD
   return (
     <StylesProvider injectFirst>
     <Router>
@@ -73,6 +83,19 @@ function App() {
     </Router>
     </StylesProvider>
   );
+=======
+    return (
+        <div className="App">
+            <Header />
+            <LocationListing locationData={locations} />
+            
+            {/* so depends on where we call "Search locations" from - we might not 
+                need Search from the app main screen.
+            */}
+            <Search />
+        </div>
+    );
+>>>>>>> origin/chi-branch
 }
 
 
