@@ -58,3 +58,13 @@ body {
   color: white;
   font-size: 3rem;
 }
+
+.spl-root {
+  max-width: 50%;
+ 
+}
+
+
+.MuiCardMedia-root spl-media{
+  height: 50rem;
+}

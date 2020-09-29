@@ -65,7 +65,7 @@ function App() {
         </Switch>
         </div>
 
-        <Header />
+      
         {/* <LocationListing locationData={locations} /> */}
         <LocationDetails/>
 
