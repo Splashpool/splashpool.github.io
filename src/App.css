@@ -1,3 +1,7 @@
+body {
+  background-color: #232324;
+  color: white;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +39,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.MuiButton-root {
+  background-color:  hsl(199, 91%, 54%);
+}
+.MuiButton-root:hover {
+  background-color:  hsl(199, 91%, 54%);
+}
+.MuiButton-label {
+  color: #232324;
+}
+
+.MuiTypography-h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 3rem;
 }
