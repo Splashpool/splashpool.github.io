@@ -46,7 +46,7 @@ function App() {
       status: "Uknown",
     },
   ]);
-  
+
 
   return (
     <StylesProvider injectFirst>
@@ -86,7 +86,7 @@ function App() {
                 <Search />
               </Route>
               <Route path="/location-details">
-              <LocationDetails />
+                <LocationDetails />
               </Route>
               <Route path="/login">
                 <Login />
@@ -95,7 +95,7 @@ function App() {
           </div>
         </div>
       </Router>
-    </StylesProvider>
+    </StylesProvider >
   );
 }
 
