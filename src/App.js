@@ -63,10 +63,10 @@ function App() {
                   <Link to="/locations">Locations</Link>
                 </li>
                 <li>
-                  <Link to="/search">Search Locations</Link>
+                  <Link to="/search">Search</Link>
                 </li>
                 <li>
-                  <Link to="/location-listing">Location</Link>
+                  <Link to="/location-details">Location Details</Link>
                 </li>
                 <li>
                   <Link to="/login">Login</Link>
@@ -75,7 +75,9 @@ function App() {
             </nav>
             <Switch>
               <Route path="/locations">
+                <Map />
                 <LocationListing locationData={locations} />
+                <Filter />
               </Route>
               <Route exact={true} path="/">
                 <Header />
@@ -83,19 +85,14 @@ function App() {
               <Route path="/search">
                 <Search />
               </Route>
-              <Route path="/location-listing">
-                <LocationListing locationData={locations} />
+              <Route path="/location-details">
+              <LocationDetails />
               </Route>
               <Route path="/login">
                 <Login />
               </Route>
             </Switch>
           </div>
-
-          {/* <LocationListing locationData={locations} /> */}
-          <LocationDetails />
-          <Map />
-          <Filter />
         </div>
       </Router>
     </StylesProvider>
