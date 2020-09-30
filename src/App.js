@@ -88,6 +88,7 @@ function App() {
               <Route path="/search">
                 <Search />
               </Route>
+
               <Route path="/login">
                 <Login />
               </Route>
@@ -98,7 +99,7 @@ function App() {
           </div>
         </div>
       </Router>
-    </StylesProvider>
+    </StylesProvider >
   );
 }
 

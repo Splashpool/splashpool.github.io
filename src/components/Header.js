@@ -1,6 +1,14 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link, 
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
 //import waterDroplet from './images/water_droplet.png';
 
 function Header() {
@@ -17,9 +25,11 @@ function Header() {
       <Typography variant="body1" gutterBottom>
         Find for your nearest drinking water and toilet facilities
       </Typography>
-      <Button variant="contained" color="primary">
-        Search locations
-      </Button>
+      <Link to="/search">
+        <Button variant="contained" color="primary" >
+          Search locations
+        </Button>
+      </Link>
     </div>
   );
 }
