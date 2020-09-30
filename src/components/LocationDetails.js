@@ -17,7 +17,7 @@ import Button from '@material-ui/core/Button';
 
 
 
-function LocationDetails() {
+function LocationDetails(data) {
 
     const [value, setValue] = React.useState('drinkable');
 
@@ -25,7 +25,7 @@ function LocationDetails() {
         setValue(event.target.value);
     };
 
-
+  console.log(data);
 
 
     return (

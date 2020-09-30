@@ -19,34 +19,39 @@ import Search from "./components/Search";
 import Filter from "./components/Filter";
 import Map from "./components/Map";
 
+
 function App() {
   const [locations, setlocation] = useState([
     {
+      id: 1,
       name: "london",
       longitude: "51.5074",
       latitude: " 0.1278",
       status: "Drinkable",
     },
     {
+      id: 2,
       name: "Santiago",
       longitude: "54.5074",
       latitude: " 7.1278",
       status: "Need traitment",
     },
     {
+      id: 3,
       name: "Santiago",
       longitude: "94.5074",
       latitude: " 7.1278",
       status: "Drinkable",
     },
     {
+      id: 4,
       name: "Santiago",
       longitude: "04.5074",
       latitude: " 7.1278",
       status: "Uknown",
     },
   ]);
-  
+
 
   return (
     <StylesProvider injectFirst>
@@ -66,13 +71,11 @@ function App() {
                   <Link to="/search">Search</Link>
                 </li>
                 <li>
-                  <Link to="/location-details">Location Details</Link>
-                </li>
-                <li>
                   <Link to="/login">Login</Link>
                 </li>
               </ul>
             </nav>
+
             <Switch>
               <Route path="/locations">
                 <Map />
@@ -85,12 +88,12 @@ function App() {
               <Route path="/search">
                 <Search />
               </Route>
-              <Route path="/location-details">
-              <LocationDetails />
-              </Route>
               <Route path="/login">
                 <Login />
               </Route>
+            </Switch>
+            <Switch>
+              <Route path='/location-details/:number' component={LocationDetails} />
             </Switch>
           </div>
         </div>
