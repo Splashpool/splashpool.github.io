@@ -74,7 +74,7 @@ function App() {
 
       
         {/* <LocationListing locationData={locations} /> */}
-        <LocationDetails/>
+        {/* <LocationDetails/> */}
 
       </div>
     </Router>
