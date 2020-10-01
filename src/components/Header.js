@@ -9,7 +9,6 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-//import waterDroplet from './images/water_droplet.png';
 
 function Header() {
   return (
