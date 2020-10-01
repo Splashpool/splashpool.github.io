@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Splashpool/oasis-app-frontend/static/css/main.0bd2aefa.chunk.css",
-    "main.js": "/Splashpool/oasis-app-frontend/static/js/main.2e8953b7.chunk.js",
-    "main.js.map": "/Splashpool/oasis-app-frontend/static/js/main.2e8953b7.chunk.js.map",
-    "runtime-main.js": "/Splashpool/oasis-app-frontend/static/js/runtime-main.e41e2ac6.js",
-    "runtime-main.js.map": "/Splashpool/oasis-app-frontend/static/js/runtime-main.e41e2ac6.js.map",
-    "static/css/2.78dc3801.chunk.css": "/Splashpool/oasis-app-frontend/static/css/2.78dc3801.chunk.css",
-    "static/js/2.fea32962.chunk.js": "/Splashpool/oasis-app-frontend/static/js/2.fea32962.chunk.js",
-    "static/js/2.fea32962.chunk.js.map": "/Splashpool/oasis-app-frontend/static/js/2.fea32962.chunk.js.map",
-    "index.html": "/Splashpool/oasis-app-frontend/index.html",
-    "precache-manifest.1a495294e128a21c177fbfda6dfeeece.js": "/Splashpool/oasis-app-frontend/precache-manifest.1a495294e128a21c177fbfda6dfeeece.js",
-    "service-worker.js": "/Splashpool/oasis-app-frontend/service-worker.js",
-    "static/css/2.78dc3801.chunk.css.map": "/Splashpool/oasis-app-frontend/static/css/2.78dc3801.chunk.css.map",
-    "static/css/main.0bd2aefa.chunk.css.map": "/Splashpool/oasis-app-frontend/static/css/main.0bd2aefa.chunk.css.map",
-    "static/js/2.fea32962.chunk.js.LICENSE.txt": "/Splashpool/oasis-app-frontend/static/js/2.fea32962.chunk.js.LICENSE.txt",
-    "static/media/map.png": "/Splashpool/oasis-app-frontend/static/media/map.e9993cfc.png",
-    "static/media/index.css": "/Splashpool/oasis-app-frontend/static/media/montserrat-vietnamese-400-normal.8c255c10.woff2"
+    "main.css": "/oasis-app-frontend/static/css/main.0bd2aefa.chunk.css",
+    "main.js": "/oasis-app-frontend/static/js/main.32da2878.chunk.js",
+    "main.js.map": "/oasis-app-frontend/static/js/main.32da2878.chunk.js.map",
+    "runtime-main.js": "/oasis-app-frontend/static/js/runtime-main.ffcf5cbe.js",
+    "runtime-main.js.map": "/oasis-app-frontend/static/js/runtime-main.ffcf5cbe.js.map",
+    "static/css/2.ed6d5676.chunk.css": "/oasis-app-frontend/static/css/2.ed6d5676.chunk.css",
+    "static/js/2.fea32962.chunk.js": "/oasis-app-frontend/static/js/2.fea32962.chunk.js",
+    "static/js/2.fea32962.chunk.js.map": "/oasis-app-frontend/static/js/2.fea32962.chunk.js.map",
+    "index.html": "/oasis-app-frontend/index.html",
+    "precache-manifest.19b8138822101a896ffdefccc7250f7a.js": "/oasis-app-frontend/precache-manifest.19b8138822101a896ffdefccc7250f7a.js",
+    "service-worker.js": "/oasis-app-frontend/service-worker.js",
+    "static/css/2.ed6d5676.chunk.css.map": "/oasis-app-frontend/static/css/2.ed6d5676.chunk.css.map",
+    "static/css/main.0bd2aefa.chunk.css.map": "/oasis-app-frontend/static/css/main.0bd2aefa.chunk.css.map",
+    "static/js/2.fea32962.chunk.js.LICENSE.txt": "/oasis-app-frontend/static/js/2.fea32962.chunk.js.LICENSE.txt",
+    "static/media/map.png": "/oasis-app-frontend/static/media/map.e9993cfc.png",
+    "static/media/index.css": "/oasis-app-frontend/static/media/montserrat-vietnamese-400-normal.8c255c10.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.e41e2ac6.js",
-    "static/css/2.78dc3801.chunk.css",
+    "static/js/runtime-main.ffcf5cbe.js",
+    "static/css/2.ed6d5676.chunk.css",
     "static/js/2.fea32962.chunk.js",
     "static/css/main.0bd2aefa.chunk.css",
-    "static/js/main.2e8953b7.chunk.js"
+    "static/js/main.32da2878.chunk.js"
   ]
 }
