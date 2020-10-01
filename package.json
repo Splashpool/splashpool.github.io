@@ -2,7 +2,7 @@
   "name": "oasis-app-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Splashpool/oasis-app-frontend/",
+  "homepage": "https://Splashpool.github.io/oasis-app-frontend",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
