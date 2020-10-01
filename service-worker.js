@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/oasis-app-frontend/precache-manifest.19b8138822101a896ffdefccc7250f7a.js"
+  "/oasis-app-frontend/precache-manifest.29031cbf665d117ad4b52c6bac251de1.js"
 );
 
 self.addEventListener('message', (event) => {
