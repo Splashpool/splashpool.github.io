@@ -1,8 +1,11 @@
 import map from "../map.png"; // relative path to image
 import React, { useRef, useEffect } from "react";
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 // for using maps you need to install ->  npm install mapbox-gl --save
+// install for search feild  -> npm install --save @mapbox/mapbox-gl-geocoder
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0cHAyOHZhd3V0MSJ9.PmRGRrM4p1wgKavJKm-56A'
   
@@ -28,6 +31,12 @@ const MapView = () => {
       },
       trackUserLocation: true
     }));
+    map.addControl(
+      new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+      })
+      );
 
     // clean up on unmount
     return () => map.remove();
