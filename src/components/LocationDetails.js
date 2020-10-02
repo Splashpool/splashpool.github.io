@@ -17,6 +17,13 @@ import Button from '@material-ui/core/Button';
 
 
 
+// ES5
+
+
+
+
+
+
 function LocationDetails(data) {
 
     const [value, setValue] = React.useState('drinkable');
@@ -25,12 +32,21 @@ function LocationDetails(data) {
         setValue(event.target.value);
     };
 
-  console.log(data);
+    console.log(data);
 
+    //   mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0cHAyOHZhd3V0MSJ9.PmRGRrM4p1wgKavJKm-56A';
+    //   const map = new mapboxgl.Map({
+    //   container: 'map',
+    //   style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+    //   center: [-74.5, 40], // starting position [lng, lat]
+    //   zoom: 9 // starting zoom
+    //   });
 
     return (
         <Grid container >
+
             <Grid item xs={12} md={12}>
+
                 {/* to get this line working you need to install -> npm install material-ui-rating
                  and  npm install @material-ui/icons */}
 
@@ -52,14 +68,14 @@ function LocationDetails(data) {
                             />
                             <FormControl component="fieldset">
 
-                                <RadioGroup aria-label="gender" name="water" value={value} onChange={handleChange}  className="spl-radio">
-                                    <FormControlLabel value="drinkable" control={<Radio color="primary"/>} label="Drinkable" />
-                                    <Divider/>
+                                <RadioGroup aria-label="gender" name="water" value={value} onChange={handleChange} className="spl-radio">
+                                    <FormControlLabel value="drinkable" control={<Radio color="primary" />} label="Drinkable" />
+                                    <Divider />
                                     <FormControlLabel value="treatment" control={<Radio color="primary" />} label="Need treatment" />
-                                    <Divider/>
+                                    <Divider />
                                     <FormControlLabel value="undrinkable" control={<Radio color="primary" />} label="Undrinkable" />
-                                    <Divider/>
-                                    <FormControlLabel value="unkown" control={<Radio color="primary"/>} label="Unkown" />
+                                    <Divider />
+                                    <FormControlLabel value="unkown" control={<Radio color="primary" />} label="Unkown" />
                                 </RadioGroup>
                             </FormControl>
                         </CardContent>

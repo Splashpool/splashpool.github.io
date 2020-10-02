@@ -17,7 +17,7 @@ import LocationDetails from "./components/LocationDetails";
 import "fontsource-montserrat";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
-import Map from "./components/Map";
+import MapView from "./components/MapView";
 
 
 function App() {
@@ -78,7 +78,7 @@ function App() {
 
             <Switch>
               <Route path="/locations">
-                <Map />
+                <MapView />
                 <LocationListing locationData={locations} />
                 <Filter />
               </Route>
