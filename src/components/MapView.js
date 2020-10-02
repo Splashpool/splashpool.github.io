@@ -8,7 +8,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 // install for search feild  -> npm install --save @mapbox/mapbox-gl-geocoder
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0cHAyOHZhd3V0MSJ9.PmRGRrM4p1wgKavJKm-56A'
-  
+
 
 const MapView = () => {
   const mapContainerRef = useRef(null);
@@ -33,10 +33,10 @@ const MapView = () => {
     }));
     map.addControl(
       new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
       })
-      );
+    );
 
     // clean up on unmount
     return () => map.remove();
