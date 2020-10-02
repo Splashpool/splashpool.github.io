@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3aaf79a86f07ccb9f05eed887b7af49e",
+    "revision": "02b130e743331aaa7e79f90ed957692b",
     "url": "/oasis-app-frontend/index.html"
   },
   {
-    "revision": "a4f6ea59598248a9e724",
+    "revision": "ffd32c60343b5a1b2ac0",
     "url": "/oasis-app-frontend/static/css/2.ed6d5676.chunk.css"
   },
   {
-    "revision": "2c9d28d140c195e7cded",
+    "revision": "c537195177131dbb296e",
     "url": "/oasis-app-frontend/static/css/main.0bd2aefa.chunk.css"
   },
   {
-    "revision": "a4f6ea59598248a9e724",
-    "url": "/oasis-app-frontend/static/js/2.59a4c9ad.chunk.js"
+    "revision": "ffd32c60343b5a1b2ac0",
+    "url": "/oasis-app-frontend/static/js/2.fea32962.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/oasis-app-frontend/static/js/2.59a4c9ad.chunk.js.LICENSE.txt"
+    "url": "/oasis-app-frontend/static/js/2.fea32962.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2c9d28d140c195e7cded",
-    "url": "/oasis-app-frontend/static/js/main.a88883e3.chunk.js"
+    "revision": "c537195177131dbb296e",
+    "url": "/oasis-app-frontend/static/js/main.8267b215.chunk.js"
   },
   {
     "revision": "795cdfdd699f1b946966",
