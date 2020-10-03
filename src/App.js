@@ -97,10 +97,10 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
-              <Route exact={true} path="/">
+              <Route path='/location-details/:number' component={LocationDetails} />
+              <Route path="/">
                 <Home />
               </Route>
-              <Route path='/location-details/:number' component={LocationDetails} />
             </Switch>
           </div>
         </Container>
