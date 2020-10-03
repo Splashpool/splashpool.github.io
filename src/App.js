@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StylesProvider } from "@material-ui/core/styles";
+import Container from '@material-ui/core/Container';
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -9,8 +10,8 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-import Header from "./components/Header";
-import Login from "./components/Login";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
 import Nav from "./components/Nav";
 import LocationListing from "./components/LocationListing";
 import LocationDetails from "./components/LocationDetails";
@@ -18,7 +19,11 @@ import "fontsource-montserrat";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
 import MapView from "./components/MapView";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faHandHoldingWater } from '@fortawesome/free-solid-svg-icons';
 
+library.add(fab, faHandHoldingWater);
 
 function App() {
   const [locations, setlocation] = useState([
@@ -57,7 +62,8 @@ function App() {
     <StylesProvider injectFirst>
       <Router>
         <div className="App">
-          <Nav />
+        <Nav />
+        <Container maxWidth="md">
           <div>
             <nav>
               <ul>
@@ -73,6 +79,9 @@ function App() {
                 <li>
                   <Link to="/login">Login</Link>
                 </li>
+                <li>
+                  <Link to="/location-details/:number">location-details</Link>
+                </li>
               </ul>
             </nav>
 
@@ -82,20 +91,19 @@ function App() {
                 <LocationListing locationData={locations} />
                 <Filter />
               </Route>
-              <Route exact={true} path="/">
-                <Header />
-              </Route>
               <Route path="/search">
                 <Search />
               </Route>
               <Route path="/login">
                 <Login />
               </Route>
-            </Switch>
-            <Switch>
+              <Route exact={true} path="/">
+                <Home />
+              </Route>
               <Route path='/location-details/:number' component={LocationDetails} />
             </Switch>
           </div>
+        </Container>
         </div>
       </Router>
     </StylesProvider >

@@ -43,9 +43,8 @@ function LocationDetails(data) {
     //   });
 
     return (
-        <Grid container >
-
-            <Grid item xs={12} md={12}>
+        <Grid container spacing={0}>
+        <Grid item xs={12}>
 
                 {/* to get this line working you need to install -> npm install material-ui-rating
                  and  npm install @material-ui/icons */}
