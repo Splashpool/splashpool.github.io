@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/oasis-app-frontend/static/css/main.88d46e93.chunk.css",
-    "main.js": "/oasis-app-frontend/static/js/main.56ccb2b2.chunk.js",
-    "main.js.map": "/oasis-app-frontend/static/js/main.56ccb2b2.chunk.js.map",
+    "main.css": "/oasis-app-frontend/static/css/main.ffde81af.chunk.css",
+    "main.js": "/oasis-app-frontend/static/js/main.1c6c8244.chunk.js",
+    "main.js.map": "/oasis-app-frontend/static/js/main.1c6c8244.chunk.js.map",
     "runtime-main.js": "/oasis-app-frontend/static/js/runtime-main.ffcf5cbe.js",
     "runtime-main.js.map": "/oasis-app-frontend/static/js/runtime-main.ffcf5cbe.js.map",
     "static/css/2.26b4b09d.chunk.css": "/oasis-app-frontend/static/css/2.26b4b09d.chunk.css",
-    "static/js/2.7a872cd5.chunk.js": "/oasis-app-frontend/static/js/2.7a872cd5.chunk.js",
-    "static/js/2.7a872cd5.chunk.js.map": "/oasis-app-frontend/static/js/2.7a872cd5.chunk.js.map",
+    "static/js/2.d4fbcaa9.chunk.js": "/oasis-app-frontend/static/js/2.d4fbcaa9.chunk.js",
+    "static/js/2.d4fbcaa9.chunk.js.map": "/oasis-app-frontend/static/js/2.d4fbcaa9.chunk.js.map",
     "index.html": "/oasis-app-frontend/index.html",
-    "precache-manifest.035e0f0ed05329fbc1a1e20be142aebf.js": "/oasis-app-frontend/precache-manifest.035e0f0ed05329fbc1a1e20be142aebf.js",
+    "precache-manifest.8f5db168d0f8269f1a5b5d144125f052.js": "/oasis-app-frontend/precache-manifest.8f5db168d0f8269f1a5b5d144125f052.js",
     "service-worker.js": "/oasis-app-frontend/service-worker.js",
     "static/css/2.26b4b09d.chunk.css.map": "/oasis-app-frontend/static/css/2.26b4b09d.chunk.css.map",
-    "static/css/main.88d46e93.chunk.css.map": "/oasis-app-frontend/static/css/main.88d46e93.chunk.css.map",
-    "static/js/2.7a872cd5.chunk.js.LICENSE.txt": "/oasis-app-frontend/static/js/2.7a872cd5.chunk.js.LICENSE.txt",
+    "static/css/main.ffde81af.chunk.css.map": "/oasis-app-frontend/static/css/main.ffde81af.chunk.css.map",
+    "static/js/2.d4fbcaa9.chunk.js.LICENSE.txt": "/oasis-app-frontend/static/js/2.d4fbcaa9.chunk.js.LICENSE.txt",
     "static/media/map.png": "/oasis-app-frontend/static/media/map.e9993cfc.png",
     "static/media/index.css": "/oasis-app-frontend/static/media/montserrat-vietnamese-400-normal.8c255c10.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.ffcf5cbe.js",
     "static/css/2.26b4b09d.chunk.css",
-    "static/js/2.7a872cd5.chunk.js",
-    "static/css/main.88d46e93.chunk.css",
-    "static/js/main.56ccb2b2.chunk.js"
+    "static/js/2.d4fbcaa9.chunk.js",
+    "static/css/main.ffde81af.chunk.css",
+    "static/js/main.1c6c8244.chunk.js"
   ]
 }
