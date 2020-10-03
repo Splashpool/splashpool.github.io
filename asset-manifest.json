@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/oasis-app-frontend/static/css/main.ffde81af.chunk.css",
-    "main.js": "/oasis-app-frontend/static/js/main.1c6c8244.chunk.js",
-    "main.js.map": "/oasis-app-frontend/static/js/main.1c6c8244.chunk.js.map",
+    "main.js": "/oasis-app-frontend/static/js/main.09c37057.chunk.js",
+    "main.js.map": "/oasis-app-frontend/static/js/main.09c37057.chunk.js.map",
     "runtime-main.js": "/oasis-app-frontend/static/js/runtime-main.ffcf5cbe.js",
     "runtime-main.js.map": "/oasis-app-frontend/static/js/runtime-main.ffcf5cbe.js.map",
     "static/css/2.26b4b09d.chunk.css": "/oasis-app-frontend/static/css/2.26b4b09d.chunk.css",
     "static/js/2.d4fbcaa9.chunk.js": "/oasis-app-frontend/static/js/2.d4fbcaa9.chunk.js",
     "static/js/2.d4fbcaa9.chunk.js.map": "/oasis-app-frontend/static/js/2.d4fbcaa9.chunk.js.map",
     "index.html": "/oasis-app-frontend/index.html",
-    "precache-manifest.8f5db168d0f8269f1a5b5d144125f052.js": "/oasis-app-frontend/precache-manifest.8f5db168d0f8269f1a5b5d144125f052.js",
+    "precache-manifest.b05d3097456c0fb8a87f2e35a04c3921.js": "/oasis-app-frontend/precache-manifest.b05d3097456c0fb8a87f2e35a04c3921.js",
     "service-worker.js": "/oasis-app-frontend/service-worker.js",
     "static/css/2.26b4b09d.chunk.css.map": "/oasis-app-frontend/static/css/2.26b4b09d.chunk.css.map",
     "static/css/main.ffde81af.chunk.css.map": "/oasis-app-frontend/static/css/main.ffde81af.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.26b4b09d.chunk.css",
     "static/js/2.d4fbcaa9.chunk.js",
     "static/css/main.ffde81af.chunk.css",
-    "static/js/main.1c6c8244.chunk.js"
+    "static/js/main.09c37057.chunk.js"
   ]
 }
