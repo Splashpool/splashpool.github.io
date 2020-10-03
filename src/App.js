@@ -97,7 +97,8 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
-              <Route path='/location-details/:number' component={LocationDetails} />
+              <Route path='/location-details/:number' component={LocationDetails}>
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
