@@ -32,10 +32,10 @@ function Header() {
           <Typography variant="body1" gutterBottom className="spl--pb">
             Find for your nearest drinking water and toilet facilities
       </Typography>
-          <Link to="/search">
+          <Link to="/search" style={{ textDecoration: 'none' }}> 
             <Button variant="contained" color="primary" >
               Search locations
-        </Button>
+            </Button>
           </Link>
           </Grid>
           <Grid item md></Grid>
