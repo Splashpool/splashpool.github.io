@@ -7,7 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import GpsFixedTwoToneIcon from '@material-ui/icons/GpsFixedTwoTone';
 import SettingsTwoToneIcon from '@material-ui/icons/SettingsTwoTone';
 import IconButton from '@material-ui/core/IconButton';
-import Home from './Home/Home';
+import Home from '../Home/Home';
 import { Box } from '@material-ui/core';
 
 

@@ -16,7 +16,7 @@ import Nav from "./components/Nav";
 import LocationListing from "./components/LocationListing";
 import LocationDetails from "./components/LocationDetails";
 import "fontsource-montserrat";
-import Search from "./components/Search";
+import Search from "./components/Search/Search";
 import Filter from "./components/Filter";
 import MapView from "./components/MapView";
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -91,17 +91,10 @@ function App() {
                 <LocationListing locationData={locations} />
                 <Filter />
               </Route>
-              <Route path="/search">
-                <Search />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path='/location-details/:number' component={LocationDetails}>
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
+              <Route path="/search" component={Search} />
+              <Route path="/login" component={Login} />
+              <Route path='/location-details/:number' component={LocationDetails} />
+              <Route path="/" exact={true} component={Home} />
             </Switch>
           </div>
         </Container>
