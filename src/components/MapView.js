@@ -29,7 +29,7 @@ const MapView = () => {
       center: [-1.9876, 51.7405],
       zoom: 12.5,
     });
-        /* src/App.js */
+    /* src/App.js */
 
 
     // add navigation control (the +/- zoom buttons) and geolocate user
@@ -43,8 +43,8 @@ const MapView = () => {
       var lon = e.coords.longitude;
       var lat = e.coords.latitude
       var position = [lon, lat];
-     // console.log(position);
-      
+      // console.log(position);
+
     })
     );
     map.addControl(
@@ -58,6 +58,7 @@ const MapView = () => {
 
     map.on("load", () => {
       // add the data source for new a feature collection with no features
+
       map.addSource("random-points-data", {
         type: "geojson",
         data: {
@@ -72,8 +73,9 @@ const MapView = () => {
         type: "symbol",
         layout: {
           // full list of icons here: https://labs.mapbox.com/maki-icons
-          "icon-image": "bakery-15", // this will put little croissants on our map
+          "icon-image": "drinking-water-15", // this will put little croissants on our map
           "icon-padding": 0,
+          'icon-size': 2,
           "icon-allow-overlap": true
         }
       });
@@ -115,7 +117,7 @@ const MapView = () => {
           .addTo(map);
       }
     });
-    
+
     // map.on('moveend', async () => {
     //   // get center coordinates
     //   const { lng, lat } = map.getCenter();
@@ -133,9 +135,9 @@ const MapView = () => {
     //       .addTo(map);
     //   });
     // });
-      
-       
-     
+
+
+
 
 
     // clean up on unmount
