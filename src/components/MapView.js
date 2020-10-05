@@ -75,7 +75,7 @@ const MapView = () => {
           // full list of icons here: https://labs.mapbox.com/maki-icons
           "icon-image": "drinking-water-15", // this will put little croissants on our map
           "icon-padding": 0,
-          'icon-size': 2,
+          'icon-size': 1.5,
           "icon-allow-overlap": true
         }
       });
