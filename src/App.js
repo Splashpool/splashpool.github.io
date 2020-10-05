@@ -22,6 +22,7 @@ import MapView from "./components/MapView";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faHandHoldingWater } from '@fortawesome/free-solid-svg-icons';
+import Copyright from "./components/Copyright/Copyright";
 
 library.add(fab, faHandHoldingWater);
 
@@ -98,6 +99,7 @@ function App() {
             </Switch>
           </div>
         </Container>
+        <Copyright />
         </div>
       </Router>
     </StylesProvider >
