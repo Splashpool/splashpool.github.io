@@ -11,7 +11,7 @@ import {
   useParams,
 } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
+import Login from "./components/Login/Login.jsx";
 import Nav from "./components/Nav";
 import LocationListing from "./components/LocationListing";
 import LocationDetails from "./components/LocationDetails";

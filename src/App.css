@@ -83,3 +83,11 @@ body {
   width: 700px;
   display: block;
 }
+.marker {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQq0U9KTY5HMWEAcylPAlJOdAR8dQI8bcharA&usqp=CAU');
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
