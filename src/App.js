@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login.jsx";
-import Nav from "./components/Nav";
+import Menu from "./components/Menu/Menu";
 import LocationListing from "./components/LocationListing";
 import LocationDetails from "./components/LocationDetails";
 import "fontsource-montserrat";
@@ -62,7 +62,7 @@ function App() {
     <StylesProvider injectFirst>
       <Router>
         <div className="App">
-          <Nav />
+          <Menu />
           <Container maxWidth="md">
             <div>
               <nav>
