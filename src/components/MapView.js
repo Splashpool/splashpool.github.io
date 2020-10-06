@@ -74,7 +74,7 @@ const MapView = () => {
         type: "symbol",
         layout: {
           // full list of icons here: https://labs.mapbox.com/maki-icons
-          "icon-image": "drinking-water-15", 
+          "icon-image": "drinking-water-15",
           "icon-padding": 0,
           'icon-size': 1.5,
           "icon-allow-overlap": true
