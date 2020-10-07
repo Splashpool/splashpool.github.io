@@ -61,11 +61,13 @@ body {
 
 .spl-root {
   max-width: 100%;
+  
 }
 
 .spl-media {
-  height: 25rem;
+  height: 7rem;
   text-align: center;
+  align-self: center;
 }
 
 .spl-filterTitle {
@@ -79,8 +81,8 @@ body {
 }
 
 .map-container {
-  height: 300px;
-  width: 700px;
+  height: 80vh;
+  width: 100%;
   display: block;
 }
 .marker {

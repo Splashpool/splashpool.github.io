@@ -4,10 +4,8 @@ import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import fetchFakeData from './MapView/fetchFakeData';
-import Marker from './MapView/Marker';
+//import Marker from './MapView/Marker'; unused marker
 import Popup from './MapView/Popup';
-
-
 
 
 // for using maps you need to install ->  npm install mapbox-gl --save
@@ -19,7 +17,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0c
 
 const MapView = () => {
   const mapContainerRef = useRef(null);
-  const popUpRef = useRef(new mapboxgl.Popup({ offset: 10 }));
+  const popUpRef = useRef(new mapboxgl.Popup({ offset: [20, 0] }));
   const geolocate = new mapboxgl.GeolocateControl({
     positionOptions: {
       enableHighAccuracy: true
@@ -33,11 +31,9 @@ const MapView = () => {
       // See style options here: https://docs.mapbox.com/api/maps/#styles
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [-1.9876, 51.7405],
-      zoom: 10.5,
+      zoom: 12.5,
     });
-    /* src/App.js */
-
-
+  
     // add navigation control (the +/- zoom buttons) and geolocate user
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     map.addControl(geolocate.on('geolocate', function (e) {
@@ -54,8 +50,6 @@ const MapView = () => {
         mapboxgl: mapboxgl
       })
     );
-
-
 
     map.on("load", () => {
       // add the data source for new a feature collection with no features
@@ -137,10 +131,6 @@ const MapView = () => {
     //       .addTo(map);
     //   });
     // });
-
-
-
-
 
     // clean up on unmount
     return () => map.remove();

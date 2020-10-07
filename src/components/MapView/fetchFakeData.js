@@ -15,6 +15,10 @@ function fetchFakeData ( centerCoordinates ) {
           id,
           name: `Random Point #${id}`,
           description: `description for Random Point #${id}`,
+          WC :true,
+          Water:true,
+          stars:4,
+          status: 'drinkable'
         },
       });
     }

@@ -34,13 +34,6 @@ function LocationDetails(data) {
 
     console.log(data);
 
-    //   mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0cHAyOHZhd3V0MSJ9.PmRGRrM4p1wgKavJKm-56A';
-    //   const map = new mapboxgl.Map({
-    //   container: 'map',
-    //   style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    //   center: [-74.5, 40], // starting position [lng, lat]
-    //   zoom: 9 // starting zoom
-    //   });
 
     return (
         <Grid container spacing={0}>
