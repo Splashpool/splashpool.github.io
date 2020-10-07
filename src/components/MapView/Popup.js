@@ -14,7 +14,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 const Popup = ({ feature }) => {
-    const { id, name, description ,status,stars} = feature.properties;
+    const { id, name, description, status, stars } = feature.properties;
 
     const [value, setValue] = React.useState(status);
 
@@ -28,7 +28,7 @@ const Popup = ({ feature }) => {
         // </div>
 
         <Grid container spacing={0}>
-        <Grid item xs={12}>
+            <Grid item xs={12}>
 
                 {/* to get this line working you need to install -> npm install material-ui-rating
                  and  npm install @material-ui/icons */}
