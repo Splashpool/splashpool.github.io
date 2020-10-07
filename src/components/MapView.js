@@ -20,27 +20,27 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0c
 const MapView = () => {
   const mapContainerRef = useRef(null);
   const popUpRef = useRef(new mapboxgl.Popup({ offset: 10 }));
-
+  const geolocate = new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    trackUserLocation: true
+  });
   // initialize map when component mounts
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       // See style options here: https://docs.mapbox.com/api/maps/#styles
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-1.9876, 51.7405],
-      zoom: 12.5,
+      //center: [-1.9876, 51.7405],
+      zoom: 10.5,
     });
     /* src/App.js */
 
 
     // add navigation control (the +/- zoom buttons) and geolocate user
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-    map.addControl(new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-      trackUserLocation: true
-    }).on('geolocate', function (e) {
+    map.addControl(geolocate.on('geolocate', function (e) {
       var lon = e.coords.longitude;
       var lat = e.coords.latitude
       var position = [lon, lat];
@@ -80,6 +80,7 @@ const MapView = () => {
           "icon-allow-overlap": true
         }
       });
+      geolocate.trigger();
     });
 
     map.on("moveend", async () => {
