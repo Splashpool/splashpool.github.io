@@ -1,4 +1,4 @@
-import map from "../map.png"; // relative path to image
+import map from "../assets/images/map.png"; // relative path to image
 import React, { useRef, useEffect } from "react";
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
