@@ -32,7 +32,7 @@ const MapView = () => {
       container: mapContainerRef.current,
       // See style options here: https://docs.mapbox.com/api/maps/#styles
       style: 'mapbox://styles/mapbox/streets-v11',
-      //center: [-1.9876, 51.7405],
+      center: [-1.9876, 51.7405],
       zoom: 10.5,
     });
     /* src/App.js */
@@ -59,7 +59,7 @@ const MapView = () => {
 
     map.on("load", () => {
       // add the data source for new a feature collection with no features
-
+     // geolocate.trigger(); -> use when the search button is triggered 
       map.addSource("random-points-data", {
         type: "geojson",
         data: {
@@ -80,7 +80,7 @@ const MapView = () => {
           "icon-allow-overlap": true
         }
       });
-      geolocate.trigger();
+    
     });
 
     map.on("moveend", async () => {
