@@ -7,10 +7,10 @@ import fetchFakeData from './MapView/fetchFakeData';
 //import Marker from './MapView/Marker'; unused marker
 import Popup from './MapView/Popup';
 
-
 // for using maps you need to install ->  npm install mapbox-gl --save
 // install for search feild -> npm install --save @mapbox/mapbox-gl-geocoder
 //install readdom -> npm install react react-dom
+
 var ReactDOM = require('react-dom');
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0cHAyOHZhd3V0MSJ9.PmRGRrM4p1wgKavJKm-56A'
 
