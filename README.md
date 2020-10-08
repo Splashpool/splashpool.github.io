@@ -1,4 +1,4 @@
-https://splashpool.github.io/
+https://splashpool.github.io
 
 
 
