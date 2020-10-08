@@ -1,5 +1,5 @@
 {
-  "name": "oasis-app-frontend",
+  "name": "splashpool.github.io",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://splashpool.github.io",
@@ -46,5 +46,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "https://splashpool.github.io",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Splashpool/splashpool.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Splashpool/splashpool.github.io/issues"
   }
 }
