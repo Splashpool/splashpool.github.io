@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./Home.css";
+import image from "../../assets/images/oasis-logo.svg";
 
 import {
   BrowserRouter as Router,
@@ -21,6 +22,7 @@ function Header() {
         <Grid item md></Grid>
         <Grid item xs={12} md={6}>
         <FontAwesomeIcon icon="hand-holding-water" className="spl--pb" />
+        <img src={image}/>
       <Typography
             variant="h2"
             component="h1"
