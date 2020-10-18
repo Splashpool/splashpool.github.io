@@ -1,0 +1,11 @@
+export const LANDING = "/";
+export const SIGN_UP = "/register";
+export const SIGN_IN = "/login";
+export const HOME = "/home";
+export const ACCOUNT = "/account";
+export const PASSWORD_FORGET = "/pw-forget";
+export const ADMIN = "/admin";
+export const ADMIN_DETAILS = "/admin/:id";
+export const LOCATIONS = "/locations";
+export const SEARCH = "/search";
+export const LOCATION_DETAILS = "/location-details/:number";
