@@ -83,7 +83,7 @@ function Filter({searchString}) {
     <Grid container>
       <Grid item xs={12} md={12}>
         <MapView searchString={searchString} />
-        <LocationListing locationData={locations} />
+        {/* <LocationListing locationData={locations} /> */}
       </Grid>
       <Grid item xs={12} md={12}>
         <SwitchesGroup filterResults={filterResults} />

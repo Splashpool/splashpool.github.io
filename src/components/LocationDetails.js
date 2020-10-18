@@ -36,6 +36,7 @@ function LocationDetails(data) {
 
 
     return (
+        
         <Grid container spacing={0}>
         <Grid item xs={12}>
 

@@ -3,7 +3,7 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui
 import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
@@ -22,6 +22,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import LockIcon from '@material-ui/icons/Lock';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Header from './components/Header/Header';
+import { useHistory } from "react-router-dom";
+import Popup from './components/MapView/Popup';
+import MapView from './components/MapView';
 
 
 library.add(fab, faHandHoldingWater);
@@ -38,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function App() {
-
+  const history = useHistory();
   const classes = useStyles();
 
   // const [locations, setlocation] = useState([
@@ -138,17 +141,21 @@ function App() {
         <Header />
         <Container maxWidth="md">
           <Switch>
+          {/* <Redirect strict from="/locations" to="/location-details"  /> */}
+          <Route path="/" exact={true} component={Home} />
             <Route path="/locations">
               <Filter />
             </Route>
             <Route path="/search" component={Search} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+          
+            <Route path="/mapview"  component={MapView}/>
+            <Route path="/popup"  component={Popup}/>
             <Route
               path="/location-details/:number"
               component={LocationDetails}
             />
-            <Route path="/" exact={true} component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
           </Switch>
         </Container>
         <Copyright />
