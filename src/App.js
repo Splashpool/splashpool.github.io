@@ -80,7 +80,7 @@ function App() {
             style={{ width: '240px' }}
             varian="persistent"
             anchor="left"
-            open={false}
+            open={true}
             classes={{ paper: classes.drawerPaper }}
           >
             <List>
