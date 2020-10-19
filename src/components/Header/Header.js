@@ -1,15 +1,17 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import AuthNav from "../AuthNav";
+import NavDrawer from './NavDrawer'
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
-const useStyles = makeStyles((theme) => ({
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
@@ -19,28 +21,49 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-}));
+});
 
-const Header = props => {
-  console.log(props);
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+// const [auth, setAuth] = React.useState(true);
+// const [anchorEl, setAnchorEl] = React.useState(null);
+// const open = Boolean(anchorEl);
 
+class Header extends React.Component {
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
+  constructor(props) {
+    super(props);
+    this.state = {
+      drawerOpened: false
+    };
+  }
+  toggleDrawer = booleanValue => () => {
+    this.setState({
+      drawerOpened: booleanValue
+    });
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // handleChange = (event) => {
+  //   setAuth(event.target.checked);
+  // };
 
-  return (
+  // handleMenu = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+
+  // handleClose = () => {
+  //   setAnchorEl(null);
+  // };
+
+
+
+  render() {
+    const { classes } = this.props;
+    return (
     <div className={classes.root}>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"
+          onClick={this.toggleDrawer(true)}
+          >
             <MenuIcon />
           </IconButton>
           
@@ -49,11 +72,12 @@ const Header = props => {
             Photos
           </Typography>
             <div>
-              <IconButton
+            <AuthNav />
+            {/* <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleMenu}
+                onClick={this.handleMenu}
                 color="inherit"
               >
                 <AccountCircle />
@@ -71,15 +95,21 @@ const Header = props => {
                   horizontal: 'right',
                 }}
                 open={open}
-                onClose={handleClose}
+                onClose={this.handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-              </Menu>
+                <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                <MenuItem onClick={this.handleClose}>My account</MenuItem>
+              </Menu> */}
             </div>
         </Toolbar>
       </AppBar>
-    </div>
+
+      <NavDrawer
+          drawerOpened={this.state.drawerOpened}
+          toggleDrawer={this.toggleDrawer}
+        />
+      </div>
   );
+ }
 }
-export default Header;
+export default withStyles(styles) (Header);

@@ -1,12 +1,14 @@
-import React from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import { makeStyles, StylesProvider } from "@material-ui/core/styles";
+import React, { Component } from 'react';
+import { StylesProvider } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import "./App.css";
+
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import Profile from "./components/Profile";
 import LocationDetails from "./components/LocationDetails";
 import "fontsource-montserrat";
 import Search from "./components/Search/Search.jsx";
@@ -15,19 +17,20 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faHandHoldingWater } from "@fortawesome/free-solid-svg-icons";
 import Copyright from "./components/Copyright/Copyright";
-import HomeIcon from '@material-ui/icons/Home';
-import MyLocationIcon from '@material-ui/icons/MyLocation';
-import RoomIcon from '@material-ui/icons/Room';
-import SearchIcon from '@material-ui/icons/Search';
-import LockIcon from '@material-ui/icons/Lock';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Header from './components/Header/Header';
+
 import { useHistory } from "react-router-dom";
 import Popup from './components/MapView/Popup';
 import MapView from './components/MapView';
 
+import { useAuth0 } from "@auth0/auth0-react";
+import Loading from "./components/Loading";
+import ProtectedRoute from "./auth/protected-route";
+
+
 
 library.add(fab, faHandHoldingWater);
+
 
 const useStyles = makeStyles((theme) => ({
   drawerPaper: { width: 'inherit' },
@@ -43,6 +46,14 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const history = useHistory();
   const classes = useStyles();
+
+const App = () => {
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
 
   // const [locations, setlocation] = useState([
   //   {
@@ -78,66 +89,6 @@ function App() {
   return (
     <StylesProvider injectFirst>
       <Router>
-        <div style={{ display: 'flex' }}>
-          <Drawer
-            style={{ width: '240px' }}
-            varian="persistent"
-            anchor="left"
-            open={false}
-            classes={{ paper: classes.drawerPaper }}
-          >
-            <List>
-              <Link to="/" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <HomeIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Home"} />
-                </ListItem>
-              </Link>
-              <Link to="/locations" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <MyLocationIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Locations"} />
-                </ListItem>
-              </Link>
-              <Link to="/location-details/:number" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <RoomIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Locations Details"} />
-                </ListItem>
-              </Link>
-              <Link to="/search" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <SearchIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Search"} />
-                </ListItem>
-              </Link>
-              <Link to="/login" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <LockIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Login"} />
-                </ListItem>
-              </Link>
-              <Link to="/register" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <ExitToAppIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Register"} />
-                </ListItem>
-              </Link>
-            </List>
-          </Drawer>
-        </div>
         <Header />
         <Container maxWidth="md">
           <Switch>
@@ -150,12 +101,16 @@ function App() {
           
             <Route path="/mapview"  component={MapView}/>
             <Route path="/popup"  component={Popup}/>
+
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <ProtectedRoute path="/profile" component={Profile} />
+
             <Route
               path="/location-details/:number"
               component={LocationDetails}
             />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+          
           </Switch>
         </Container>
         <Copyright />

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://splashpool.github.io",
   "dependencies": {
+    "@auth0/auth0-react": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
     "@fortawesome/free-brands-svg-icons": "^5.15.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",

@@ -21,6 +21,7 @@ function Header() {
         <Grid item md></Grid>
         <Grid item xs={12} md={6}>
         <FontAwesomeIcon icon="hand-holding-water" className="spl--pb" />
+
       <Typography
             variant="h2"
             component="h1"
