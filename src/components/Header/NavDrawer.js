@@ -11,7 +11,10 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const styles = theme => ({
     drawerPaper: { width: 'inherit',
-    // marginTop: 64
+    marginTop: 64,
+    [theme.breakpoints.down('sm')]: {
+        marginTop: 56
+    }
     },
     link: {
       textDecoration: 'none',
