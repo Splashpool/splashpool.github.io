@@ -43,6 +43,8 @@ const Header = props => {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
+          
+          <div id="geocoder" class="geocoder"></div>
           <Typography variant="h6" className={classes.title}>
             Photos
           </Typography>

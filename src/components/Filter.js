@@ -80,7 +80,7 @@ function Filter({searchString}) {
   };
 
   return (
-    <Grid container>
+    <Grid container id="container">
       <Grid item xs={12} md={12}>
         <MapView searchString={searchString} />
         {/* <LocationListing locationData={locations} /> */}

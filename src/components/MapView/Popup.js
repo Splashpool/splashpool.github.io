@@ -13,7 +13,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link,BrowserRouter } from 'react-router-dom';
 import ReactDOM from "react-dom"
 import { render } from '@testing-library/react';
 import LocationDetails from './../LocationDetails'
@@ -28,7 +28,7 @@ const Popup = ({ feature }) => {
     function Detailpage() {
         ReactDOM.render(
 
-            <LocationDetails />, document.querySelector("#root")
+            <LocationDetails />, document.querySelector("#container")
 
 
 
@@ -57,9 +57,16 @@ const Popup = ({ feature }) => {
                 />
             </Grid>
             <Grid item xs={12}>
-                <Button color="primary" onClick={Detailpage}>
+                {/* <Button color="primary" onClick={Detailpage}>
                     Details
-            </Button>
+            </Button> */}
+             <BrowserRouter>
+                <ul>
+                    <li key={id}>
+                        <Link to={`/location-details/${id}`} onClick={Detailpage}>Details</Link>
+                    </li>
+                </ul>
+                </BrowserRouter>
             </Grid>
         </Grid>
     );
