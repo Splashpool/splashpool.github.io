@@ -57,7 +57,7 @@ const MapView = ({searchString}) => {
       mapboxgl: mapboxgl
       });
        
-    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+   document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
     map.on("load", () => {
       // add the data source for new a feature collection with no features
