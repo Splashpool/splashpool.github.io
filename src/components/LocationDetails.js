@@ -64,7 +64,6 @@ function LocationDetails(data) {
                                 onChange={(value) => console.log(`Rated with value ${value}`)}
                             />
                             <FormControl component="fieldset">
-
                                 <RadioGroup aria-label="gender" name="water" value={value} onChange={handleChange} className="spl-radio">
                                     <FormControlLabel value="drinkable" control={<Radio color="primary" />} label="Drinkable" />
                                     <Divider />

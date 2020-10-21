@@ -17,7 +17,7 @@ import {
 function Header() {
   var search = document.getElementById("geocoder");
     // remove search from nav  bar
-    if (search.childNodes[0]) {
+    if (search) {
         search.removeChild(search.childNodes[0]);
     }
 
