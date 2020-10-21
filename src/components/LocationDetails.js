@@ -34,11 +34,15 @@ function LocationDetails(data) {
 
     console.log(data);
 
-
+    var search = document.getElementById("geocoder");
+    // remove search from nav  bar
+    if (search.childNodes[0]) {
+        search.removeChild(search.childNodes[0]);
+    }
     return (
-        
+
         <Grid container spacing={0}>
-        <Grid item xs={12}>
+            <Grid item xs={12}>
 
                 {/* to get this line working you need to install -> npm install material-ui-rating
                  and  npm install @material-ui/icons */}
@@ -89,6 +93,7 @@ function LocationDetails(data) {
 
 
         </Grid>
+
     );
 }
 

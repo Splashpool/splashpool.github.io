@@ -15,6 +15,12 @@ import {
 } from "react-router-dom";
 
 function Header() {
+  var search = document.getElementById("geocoder");
+    // remove search from nav  bar
+    if (search.childNodes[0]) {
+        search.removeChild(search.childNodes[0]);
+    }
+
   return (
     <div className="Header" style={{ padding: 20 }}>
       <Grid container spacing={0}>

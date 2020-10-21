@@ -26,8 +26,9 @@ const Popup = ({ feature }) => {
         setValue(event.target.value);
     };
     function Detailpage() {
+        
         ReactDOM.render(
-
+           
             <LocationDetails />, document.querySelector("#container")
 
 
