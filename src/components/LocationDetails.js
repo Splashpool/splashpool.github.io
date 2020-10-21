@@ -25,10 +25,12 @@ import Button from '@material-ui/core/Button';
 
 
 function LocationDetails(features) {
-    if (features) {
-        const { id, name, description, status, stars } = features.features.properties;
+    var data ={};
+    console.log(features.features);
+    if (features.features) {
+     data  = features.features.properties;
     } else {
-        const { id, name, description, status, stars } = { id: 1, name: 'name', description: 'descriptionn', status: 'unknown', stars: 2 };
+        data = { id: 1, name: 'name', description: 'descriptionn', status: 'unkown', stars: 2 };
     }
     // const [value, setValue] = React.useState('drinkable');
     //   console.log('features kkkkkkk',features.features.properties);
@@ -63,13 +65,13 @@ function LocationDetails(features) {
                             <Typography variant="h5">Rating</Typography>
 
                             <Rating
-                                value={stars}
+                                value={data.stars}
                                 max={5}
                                 onChange={(value) => console.log(`Rated with value ${value}`)}
                             />
                             <FormControl component="fieldset">
 
-                                <RadioGroup aria-label="gender" name="water" value={status} onChange={handleChange} className="spl-radio">
+                                <RadioGroup aria-label="gender" name="water" value={data.status} onChange={handleChange} className="spl-radio">
                                     <FormControlLabel value="drinkable" control={<Radio color="primary" />} label="Drinkable" />
                                     <Divider />
                                     <FormControlLabel value="treatment" control={<Radio color="primary" />} label="Need treatment" />
