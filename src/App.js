@@ -76,7 +76,7 @@ const App = () => {
             <ProtectedRoute path="/profile" component={Profile} />
             <Route
               path="/location-details/:number"
-              component={LocationDetails}
+              component={LocationDetails} 
             />
             <Route path="/" exact={true} component={Home} />
           </Switch>
