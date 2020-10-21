@@ -25,14 +25,18 @@ import Button from '@material-ui/core/Button';
 
 
 function LocationDetails(features) {
-   const { id, name, description, status, stars } = features.features.properties;
+    if (features) {
+        const { id, name, description, status, stars } = features.features.properties;
+    } else {
+        const { id, name, description, status, stars } = { id: 1, name: 'name', description: 'descriptionn', status: 'unknown', stars: 2 };
+    }
     // const [value, setValue] = React.useState('drinkable');
-//   console.log('features kkkkkkk',features.features.properties);
+    //   console.log('features kkkkkkk',features.features.properties);
     const handleChange = (event) => {
-       // setValue(event.target.value);
+        // setValue(event.target.value);
     };
 
-  //  console.log(features);
+    //  console.log(features);
 
     var search = document.getElementById("geocoder");
     // remove search from nav  bar
