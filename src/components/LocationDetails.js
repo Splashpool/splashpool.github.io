@@ -26,7 +26,7 @@ import Button from '@material-ui/core/Button';
 
 function LocationDetails(features) {
     var data ={};
-    console.log(features.features);
+   // console.log(features.features);
     if (features.features) {
      data  = features.features.properties;
     } else {
