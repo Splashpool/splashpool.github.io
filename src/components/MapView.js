@@ -15,7 +15,7 @@ var ReactDOM = require('react-dom');
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuYWVzcGxhc2giLCJhIjoiY2tmYTlwMWpmMHR0cDJ0cHAyOHZhd3V0MSJ9.PmRGRrM4p1wgKavJKm-56A'
 
 
-const MapView = ({searchString}) => {
+const MapView = ({ searchString }) => {
   console.log(`${searchString} was given to MapView`);
   const mapContainerRef = useRef(null);
   const popUpRef = useRef(new mapboxgl.Popup({ offset: [20, 0] }));
@@ -34,7 +34,7 @@ const MapView = ({searchString}) => {
       center: [-1.9876, 51.7405],
       zoom: 12.5,
     });
-  
+
     // add navigation control (the +/- zoom buttons) and geolocate user
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     map.addControl(geolocate.on('geolocate', function (e) {
@@ -45,16 +45,25 @@ const MapView = ({searchString}) => {
 
     })
     );
-    map.addControl(
-      new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
-      })
-    );
+    // map's search feild
+    // map.addControl(
+    //   new MapboxGeocoder({
+    //     accessToken: mapboxgl.accessToken,
+    //     mapboxgl: mapboxgl
+    //   })
+    // );
+    var geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    });
 
+    var search = document.getElementById("geocoder");   // test if element exist 
+    if (!search.childNodes[0]){
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    }
     map.on("load", () => {
       // add the data source for new a feature collection with no features
-     // geolocate.trigger(); -> use when the search button is triggered 
+      // geolocate.trigger(); -> use when the search button is triggered 
       map.addSource("random-points-data", {
         type: "geojson",
         data: {
@@ -75,7 +84,7 @@ const MapView = ({searchString}) => {
           "icon-allow-overlap": true
         }
       });
-    
+
     });
 
     map.on("moveend", async () => {
