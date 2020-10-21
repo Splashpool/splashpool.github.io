@@ -30,6 +30,7 @@ function LocationDetails(features) {
     if (features.features) {
      data  = features.features.properties;
     } else {
+        console.log('dataaaaa',features.match.params);
         data = { id: 1, name: 'name', description: 'descriptionn', status: 'unkown', stars: 2 };
     }
     // const [value, setValue] = React.useState('drinkable');
