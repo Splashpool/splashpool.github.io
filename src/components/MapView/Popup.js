@@ -29,7 +29,7 @@ const Popup = ({ feature }) => {
         
         ReactDOM.render(
            
-            <LocationDetails />, document.querySelector("#container")
+            <LocationDetails  features={feature} />, document.querySelector("#container")
 
 
 

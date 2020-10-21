@@ -24,19 +24,19 @@ import Button from '@material-ui/core/Button';
 
 
 
-function LocationDetails(data) {
-
-    const [value, setValue] = React.useState('drinkable');
-
+function LocationDetails(features) {
+   const { id, name, description, status, stars } = features.features.properties;
+    // const [value, setValue] = React.useState('drinkable');
+//   console.log('features kkkkkkk',features.features.properties);
     const handleChange = (event) => {
-        setValue(event.target.value);
+       // setValue(event.target.value);
     };
 
-    console.log(data);
+  //  console.log(features);
 
     var search = document.getElementById("geocoder");
     // remove search from nav  bar
-    if (search.childNodes[0]) {
+    if (search) {
         search.removeChild(search.childNodes[0]);
     }
     return (
@@ -59,13 +59,13 @@ function LocationDetails(data) {
                             <Typography variant="h5">Rating</Typography>
 
                             <Rating
-                                value={5}
+                                value={stars}
                                 max={5}
                                 onChange={(value) => console.log(`Rated with value ${value}`)}
                             />
                             <FormControl component="fieldset">
 
-                                <RadioGroup aria-label="gender" name="water" value={value} onChange={handleChange} className="spl-radio">
+                                <RadioGroup aria-label="gender" name="water" value={status} onChange={handleChange} className="spl-radio">
                                     <FormControlLabel value="drinkable" control={<Radio color="primary" />} label="Drinkable" />
                                     <Divider />
                                     <FormControlLabel value="treatment" control={<Radio color="primary" />} label="Need treatment" />
