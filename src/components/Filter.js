@@ -2,7 +2,6 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import SwitchesGroup from "./SwitchesGroup";
 import MapView from "./MapView";
-import LocationListing from "./LocationListing";
 
 const locations = [
   {
@@ -83,7 +82,6 @@ function Filter({searchString}) {
     <Grid container id="container">
       <Grid item xs={12} md={12}>
         <MapView searchString={searchString} />
-        {/* <LocationListing locationData={locations} /> */}
       </Grid>
       <Grid item xs={12} md={12}>
         <SwitchesGroup filterResults={filterResults} />

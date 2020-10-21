@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { StylesProvider } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import "./App.css";
@@ -19,12 +19,22 @@ import Header from './components/Header/Header';
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
+import axios from "axios";
 
 
 library.add(fab, faHandHoldingWater);
 
 const App = () => {
   const { isLoading } = useAuth0();
+
+  useEffect (() => { axios.get('https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations', { crossdomain: true }
+  )
+  .then((response) => {
+    console.log(response);
+  }, (error) => {
+    console.log(error);
+  },[]
+  )});
 
   if (isLoading) {
     return <Loading />;
