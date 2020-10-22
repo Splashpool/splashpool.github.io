@@ -1,7 +1,8 @@
-import React from "react";
+import React ,{ useEffect }  from "react";
 import Grid from "@material-ui/core/Grid";
 import SwitchesGroup from "./SwitchesGroup";
 import MapView from "./MapView";
+import {useLocation } from "react-router-dom"
 
 const locations = [
   {
@@ -42,8 +43,15 @@ const locations = [
   },
 ];
 
-function Filter({searchString}) {
-  console.log(`${searchString} was given to Filter`);
+function Filter(props) {
+  const location = useLocation();
+
+    useEffect(() => {
+       console.log(location.pathname); // result: '/secondpage'
+      console.log(location.search); // result: '?query=abc'
+       console.log(location.state.located); // result: 'some_value'
+    }, [location]);
+
   const filterData = (locations, state) => {
     if (locations === undefined) throw new Error("locations is required");
     if (state === undefined) throw new Error("state is required");
@@ -81,7 +89,7 @@ function Filter({searchString}) {
   return (
     <Grid container id="container">
       <Grid item xs={12} md={12}>
-        <MapView searchString={searchString} />
+        <MapView props={props} />
       </Grid>
       <Grid item xs={12} md={12}>
         <SwitchesGroup filterResults={filterResults} />
