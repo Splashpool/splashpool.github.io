@@ -44,13 +44,7 @@ const locations = [
 ];
 
 function Filter(props) {
-  const location = useLocation();
 
-    useEffect(() => {
-       console.log(location.pathname); // result: '/secondpage'
-      console.log(location.search); // result: '?query=abc'
-       console.log(location.state.located); // result: 'some_value'
-    }, [location]);
 
   const filterData = (locations, state) => {
     if (locations === undefined) throw new Error("locations is required");

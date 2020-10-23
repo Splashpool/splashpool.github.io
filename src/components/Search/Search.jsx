@@ -77,6 +77,12 @@ const Search = () => {
     }
 
     const classes = useStyles();
+
+    var sear = document.getElementById("geocoder");
+    // remove search from nav  bar
+    if (sear) {
+        sear.removeChild(sear.childNodes[0]);
+    }
     return (
         <Paper component="filter" className={classes.root}>       
           <InputBase

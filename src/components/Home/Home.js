@@ -39,7 +39,7 @@ function Header() {
           <Typography variant="body1" gutterBottom className="spl--pb">
             Find for your nearest drinking water and toilet facilities
       </Typography>
-          <Link to="/search" style={{ textDecoration: 'none' }}> 
+          <Link to="/locations" style={{ textDecoration: 'none' }}> 
             <Button variant="contained" color="primary" >
               Search locations
             </Button>
