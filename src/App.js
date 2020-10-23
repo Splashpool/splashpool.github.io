@@ -20,6 +20,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
 import axios from "axios";
+import ListLocation from './components/ListLocation';
+import { List } from '@material-ui/core';
 
 
 library.add(fab, faHandHoldingWater);
@@ -81,6 +83,7 @@ const App = () => {
               <Filter />
             </Route>
             <Route path="/search" component={Search} />
+            <Route path="/list-locations" component={ListLocation} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute path="/profile" component={Profile} />
@@ -92,6 +95,7 @@ const App = () => {
           </Switch>
         </Container>
         <Copyright />
+        <ListLocation />
       </Router>
     </StylesProvider>
   );
