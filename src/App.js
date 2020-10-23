@@ -13,18 +13,18 @@ import Search from "./components/Search/Search.jsx";
 import Filter from "./components/Filter";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faHandHoldingWater } from "@fortawesome/free-solid-svg-icons";
+import { faHandHoldingWater, faTrash, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import Copyright from "./components/Copyright/Copyright";
 import Header from './components/Header/Header';
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
 import axios from "axios";
-import ListLocation from './components/ListLocation';
-import { List } from '@material-ui/core';
+import ManageLocations from './components/ManageLocations';
+import AddLocation from './components/AddLocation';
 
 
-library.add(fab, faHandHoldingWater);
+library.add(fab, faHandHoldingWater, faTrash, faTrashAlt);
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -83,7 +83,8 @@ const App = () => {
               <Filter />
             </Route>
             <Route path="/search" component={Search} />
-            <Route path="/list-locations" component={ListLocation} />
+            <Route path="/add-location" component={AddLocation} />
+            <Route path="/manage-locations" component={ManageLocations} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute path="/profile" component={Profile} />
@@ -95,7 +96,6 @@ const App = () => {
           </Switch>
         </Container>
         <Copyright />
-        <ListLocation />
       </Router>
     </StylesProvider>
   );

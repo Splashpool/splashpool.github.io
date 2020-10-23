@@ -43,7 +43,7 @@ class Login extends Component {
       password: ''
     }
   }
-  
+
   login() {
     console.log('this.state', this.state);
   }
@@ -64,10 +64,10 @@ class Login extends Component {
               gutterBottom
             >
               Login with Email
-      </Typography>
+            </Typography>
             <Typography variant="body1" gutterBottom>
               Enter the email address associated with your account
-      </Typography>
+            </Typography>
             <form /*className={classes.form}*/ noValidate>
               <TextField
                 variant="outlined"

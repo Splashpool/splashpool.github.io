@@ -68,6 +68,17 @@ body {
   color: #232324;
 }
 
+.MuiLinearProgress-colorPrimary {
+  background-color: hsl(199, 91%, 54%);
+}
+
+.MuiLinearProgress-colorPrimary {
+  background-color: #A2E5FF;
+}
+.MuiLinearProgress-barColorPrimary {
+  background-color: hsl(199, 91%, 54%);
+}
+
 .spl-root {
   max-width: 100%;
   
