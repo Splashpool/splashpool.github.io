@@ -46,9 +46,7 @@ export default function ListLocation() {
                     </Typography>
                     }
                     {getLocationLoadingSelector && <LinearProgress />}
-
-                    <AddLocation />
-                    
+                        <AddLocation />
                     <div>
                         <List>
                             {locationListSelector.map(location => (
