@@ -1,8 +1,10 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { StylesProvider } from "@material-ui/core/styles";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import Container from "@material-ui/core/Container";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
@@ -13,30 +15,50 @@ import Search from "./components/Search/Search.jsx";
 import Filter from "./components/Filter";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faHandHoldingWater, faTrash, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import Copyright from "./components/Copyright/Copyright";
+import { faHandHoldingWater, faTrash, faTrashAlt, faPen } from "@fortawesome/free-solid-svg-icons";
+import Copyright from "./components/Copyright";
 import Header from './components/Header/Header';
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
 import axios from "axios";
 import ManageLocations from './components/ManageLocations';
-import AddLocation from './components/AddLocation';
 
 
-library.add(fab, faHandHoldingWater, faTrash, faTrashAlt);
+library.add(fab, faHandHoldingWater, faTrash, faTrashAlt, faPen);
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#1FB0F5',
+    },
+  },
+  typography: {
+    fontFamily: [
+      '"Montserrat"',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+});
 
 const App = () => {
   const { isLoading } = useAuth0();
 
-  useEffect (() => { axios.get('https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations', { crossdomain: true }
-  )
-  .then((response) => {
-    console.log(response);
-  }, (error) => {
-    console.log(error);
-  },[]
-  )});
+  useEffect(() => {
+    axios.get('https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations', { crossdomain: true }
+    )
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    }, []
+    )
+  });
 
   if (isLoading) {
     return <Loading />;
@@ -74,30 +96,31 @@ const App = () => {
   // ]);
 
   return (
-    <StylesProvider injectFirst>
-      <Router>
-        <Header />
-        <Container maxWidth="md">
-          <Switch>
-            <Route path="/locations">
-              <Filter />
-            </Route>
-            <Route path="/search" component={Search} />
-            <Route path="/add-location" component={AddLocation} />
-            <Route path="/manage-locations" component={ManageLocations} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <ProtectedRoute path="/profile" component={Profile} />
-            <Route
-              path="/location-details/:number"
-              component={LocationDetails} 
-            />
-            <Route path="/" exact={true} component={Home} />
-          </Switch>
-        </Container>
-        <Copyright />
-      </Router>
-    </StylesProvider>
+    <ThemeProvider theme={theme}>
+      <StylesProvider injectFirst>
+        <Router>
+          <Header />
+          <Container maxWidth="md">
+            <Switch>
+              <Route path="/locations">
+                <Filter />
+              </Route>
+              <Route path="/search" component={Search} />
+              <Route path="/manage-locations" component={ManageLocations} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <ProtectedRoute path="/profile" component={Profile} />
+              <Route
+                path="/location-details/:number"
+                component={LocationDetails}
+              />
+              <Route path="/" exact={true} component={Home} />
+            </Switch>
+          </Container>
+          <Copyright />
+        </Router>
+      </StylesProvider>
+    </ThemeProvider>
   );
 }
 

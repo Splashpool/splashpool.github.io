@@ -22,14 +22,50 @@ export const getLocation = () => async (dispatch) => {
 export const addLocation = (locationData) => async (dispatch) => {
     try {
         dispatch({ type: locationActionType.ADD_LOCATION_BEGINS });
-        const result = await axios.post(`${apiConfig.API_BASE_URL}/locations, locationData`);
-        dispatch({
-            type: locationActionType.ADD_LOCATION_SUCCESS,
-            payload: result.data
-        });
+        const result = await axios.post(`${apiConfig.API_BASE_URL}/locations`, locationData);
+            dispatch({
+                type: locationActionType.ADD_LOCATION_SUCCESS,
+                payload: result.data
+            });
+            toast.success('Location Added Successfully!');
     } catch (error) {
         console.log(error);
         dispatch({ type: locationActionType.ADD_LOCATION_FAILURE });
         toast.error(error.message);
+        throw error;
+    }
+}
+
+export const deleteLocation = (id) => async (dispatch) => {
+    try {
+        dispatch({ type: locationActionType.DELETE_LOCATION_BEGINS });
+        await axios.delete(`${apiConfig.API_BASE_URL}/locations/${id}`);
+            dispatch({
+                type: locationActionType.DELETE_LOCATION_SUCCESS,
+                payload: id
+            });
+            toast.success('Location Deleted Successfully!');
+    } catch (error) {
+        console.log(error);
+        dispatch({ type: locationActionType.DELETE_LOCATION_FAILURE });
+        toast.error(error.message);
+        throw error;
+    }
+}
+
+export const updateLocationStatus = (locationData) => async (dispatch) => {
+    try {
+        dispatch({ type: locationActionType.UPDATE_LOCATION_BEGINS });
+        const result = await axios.put(`${apiConfig.API_BASE_URL}/locations/${locationData.id}`, locationData);
+            dispatch({
+                type: locationActionType.UPDATE_LOCATION_SUCCESS,
+                payload: result.data
+            });
+            toast.success('Location Updated Successfully!');
+    } catch (error) {
+        console.log(error);
+        dispatch({ type: locationActionType.UPDATE_LOCATION_FAILURE });
+        toast.error(error.message);
+        throw error;
     }
 }

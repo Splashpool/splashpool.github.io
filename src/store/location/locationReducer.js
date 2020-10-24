@@ -3,7 +3,9 @@ import * as locationActionType from './locationActionType';
 const initialLocationState = {
     locationList: [],
     getLocationLoading: false,
-    addLocationLoading: false
+    addLocationLoading: false,
+    deleteLocationLoading: false,
+    updateLocationLoading: false
 }
 
 const locationReducer = (state = initialLocationState, { type, payload }) => {
@@ -39,6 +41,38 @@ const locationReducer = (state = initialLocationState, { type, payload }) => {
             return {
                 ...state,
                 addLocationLoading: false
+            }
+        case locationActionType.DELETE_LOCATION_BEGINS:
+            return {
+                ...state,
+                deleteLocationLoading: true
+            }
+        case locationActionType.DELETE_LOCATION_SUCCESS:
+            return {
+                ...state,
+                locationList: state.locationList.filter(location => location.id !== payload),
+                deleteLocationLoading: false
+            }
+        case locationActionType.DELETE_LOCATION_FAILURE:
+            return {
+                ...state,
+                deleteLocationLoading: false
+            }
+        case locationActionType.UPDATE_LOCATION_BEGINS:
+            return {
+                ...state,
+                updateLocationLoading: true
+            }
+        case locationActionType.UPDATE_LOCATION_SUCCESS:
+            return {
+                ...state,
+                locationList: state.locationList.map(location => (location.id === payload.id) ? payload : location),
+                updateLocationLoading: false
+            }
+        case locationActionType.UPDATE_LOCATION_FAILURE:
+            return {
+                ...state,
+                updateLocationLoading: false
             }
         default:
             return state
