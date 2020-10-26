@@ -59,6 +59,14 @@ class NavDrawer extends Component {
                   <ListItemText primary={"Locations"} />
                 </ListItem>
               </Link>
+              <Link to="/manage-locations" className={classes.link}>
+                <ListItem button>
+                  <ListItemIcon>
+                    <MyLocationIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Manage Locations"} />
+                </ListItem>
+              </Link>
               <Link to="/location-details/:number" className={classes.link}>
                 <ListItem button>
                   <ListItemIcon>

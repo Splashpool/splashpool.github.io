@@ -17,8 +17,8 @@ body {
 .spl--mb {
   margin-bottom: 1.5rem;
 }
-.spl--mb {
-  margin-bottom: 1.5rem;
+.spl--ml {
+  margin-left: 1.5rem;
 }
 
 .App-logo {
@@ -47,26 +47,11 @@ body {
   }
 }
 
-.MuiButton-containedPrimary {
-  background-color: hsl(199, 91%, 54%);
-}
-
-.MuiButton-containedPrimary:hover {
-  background-color: hsl(199, 91%, 54%);
-}
-
-.MuiButton-outlinedPrimary {
-  color: hsl(199, 91%, 54%);
-  border: 1px solid rgba(31, 176, 245, 0.5);
-}
-
-.MuiButton-outlinedPrimary:hover {
-  border: 1px solid hsl(199, 91%, 54%);
-}
-
 .MuiButton-containedPrimary .MuiButton-label {
   color: #232324;
+  font-weight: 600;
 }
+
 
 .spl-root {
   max-width: 100%;
@@ -85,9 +70,6 @@ body {
   color: white;
 }
 
-.MuiInputBase-input {
-  color: white;
-}
 
 .map-container {
   height: 80vh;
@@ -104,4 +86,8 @@ body {
 }
 .popupdiv{
   color: #232324;
+}
+
+.MuiButton-root {
+  min-width: 45px;
 }

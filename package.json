@@ -25,16 +25,23 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-mapbox-gl": "^4.8.6",
+    "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-toastify": "^6.0.9",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "api": "json-server --port=3001 --watch db.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,5 +68,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Splashpool/splashpool.github.io/issues"
+  },
+  "devDependencies": {
+    "json-server": "^0.16.2"
   }
 }
