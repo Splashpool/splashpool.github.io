@@ -189,6 +189,30 @@
       "locationName": "fwefqwe",
       "address1": "qwerqwe",
       "id": 7
+    },
+    {
+      "locationName": "tesat",
+      "address1": "teaw",
+      "address2": "",
+      "city": "",
+      "postCode": "",
+      "country": "",
+      "longitude": 21.455,
+      "latitude": 100.9876,
+      "adminOrg": "",
+      "water": false,
+      "drinkable": false,
+      "treatment": false,
+      "unknown": false,
+      "largeWaterFacility": false,
+      "maleToilets": false,
+      "femaleToilets": false,
+      "largeToiletFacility": false,
+      "disabledAccess": false,
+      "chargeForUse": false,
+      "openingHours": "",
+      "hasIssue": false,
+      "id": 8
     }
   ]
 }

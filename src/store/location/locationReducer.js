@@ -50,7 +50,7 @@ const locationReducer = (state = initialLocationState, { type, payload }) => {
         case locationActionType.DELETE_LOCATION_SUCCESS:
             return {
                 ...state,
-                locationList: state.locationList.filter(location => location.id !== payload),
+                locationList: state.locationList.filter(location => location.locationId !== payload),
                 deleteLocationLoading: false
             }
         case locationActionType.DELETE_LOCATION_FAILURE:
@@ -66,7 +66,7 @@ const locationReducer = (state = initialLocationState, { type, payload }) => {
         case locationActionType.UPDATE_LOCATION_SUCCESS:
             return {
                 ...state,
-                locationList: state.locationList.map(location => (location.id === payload.id) ? payload : location),
+                locationList: state.locationList.map(location => (location.locationId === payload.locationId) ? payload : location),
                 updateLocationLoading: false
             }
         case locationActionType.UPDATE_LOCATION_FAILURE:
