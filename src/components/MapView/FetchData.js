@@ -6,7 +6,7 @@ const  FetchData =({long,lat}) => {
    
     const newFeaturesList = [];
      // Simple GET request using fetch
-     fetch('https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?longitude=114.0&latitude=22.0')
+     fetch(`https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?longitude=${long}&latitude=${lat}`)
      .then(response => response.json())
      .then(data => data.forEach(element => {
          let id =element.locationId;
@@ -27,7 +27,7 @@ const  FetchData =({long,lat}) => {
                 },
             })
          
-     })
+     }) 
      
      
      );
