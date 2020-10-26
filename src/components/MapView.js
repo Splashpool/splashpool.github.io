@@ -95,7 +95,7 @@ const MapView = ({ props }) => {
       console.log(lng,lat);
       // fetch new data
       const results = await fetchFakeData({ longitude: lng, latitude: lat });
-     // console.log(results);
+      console.log(results);
 
       const r=  await FetchData({ longitude: lng, latitude: lat });
       console.log(r);
