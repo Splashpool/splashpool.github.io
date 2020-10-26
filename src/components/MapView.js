@@ -6,6 +6,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import fetchFakeData from './MapView/fetchFakeData';
 //import Marker from './MapView/Marker'; unused marker
 import Popup from './MapView/Popup';
+import FetchData from './MapView/FetchData'
 
 // for using maps you need to install ->  npm install mapbox-gl --save
 // install for search feild -> npm install --save @mapbox/mapbox-gl-geocoder
@@ -91,11 +92,16 @@ const MapView = ({ props }) => {
     map.on("moveend", async () => {
       // get new center coordinates
       const { lng, lat } = map.getCenter();
+      console.log(lng,lat);
       // fetch new data
       const results = await fetchFakeData({ longitude: lng, latitude: lat });
+     // console.log(results);
+
+      const r=  await FetchData({ longitude: lng, latitude: lat });
+      console.log(r);
       // update "random-points-data" source with new data
       // all layers that consume the "random-points-data" data source will be updated automatically
-      map.getSource("random-points-data").setData(results);
+      map.getSource("random-points-data").setData(r);
     });
 
     // change cursor to pointer when user hovers over a clickable feature
