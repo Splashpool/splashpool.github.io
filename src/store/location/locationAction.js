@@ -36,13 +36,14 @@ export const addLocation = (locationData) => async (dispatch) => {
     }
 }
 
-export const deleteLocation = (id) => async (dispatch) => {
+export const deleteLocation = (locationId) => async (dispatch) => {
     try {
         dispatch({ type: locationActionType.DELETE_LOCATION_BEGINS });
-        await axios.delete(`${apiConfig.API_BASE_URL}/locations/${id}`);
+        await axios.delete(`${apiConfig.API_BASE_URL}/locations?locationId=${locationId}`);
+        console.log('Eva', locationId);
             dispatch({
                 type: locationActionType.DELETE_LOCATION_SUCCESS,
-                payload: id
+                payload: locationId
             });
             toast.success('Location Deleted Successfully!');
     } catch (error) {
@@ -56,7 +57,7 @@ export const deleteLocation = (id) => async (dispatch) => {
 export const updateLocationStatus = (locationData) => async (dispatch) => {
     try {
         dispatch({ type: locationActionType.UPDATE_LOCATION_BEGINS });
-        const result = await axios.put(`${apiConfig.API_BASE_URL}/locations/${locationData.id}`, locationData);
+        const result = await axios.put(`${apiConfig.API_BASE_URL}/locations?locationId=${locationData.locationId}`, locationData);
             dispatch({
                 type: locationActionType.UPDATE_LOCATION_SUCCESS,
                 payload: result.data

@@ -31,12 +31,12 @@ export default function ListLocation() {
     }
 
     const removeLocation = (location) => {
-        setDeleteLocationId(location.id);
-        dispatch(deleteLocation(location.id));
+        setDeleteLocationId(location.locationId);
+        dispatch(deleteLocation(location.locationId));
     }
 
     const updateLocationStatus = (location) => {
-        setUpdateLocationId(location.id);
+        setUpdateLocationId(location.locationId);
         dispatch(updateLocationStatus({
           ...location
         }))
@@ -65,15 +65,15 @@ export default function ListLocation() {
                     <div>
                         <List>
                             {locationListSelector.map(location => (
-                                <ListItem key={location.id}>
+                                <ListItem key={location.locationId}>
                                     <ListItemText primary={location.locationName} />
                                     <Button variant="contained" color="primary" aria-label="update" onClick={() => updateLocationStatus(location)}>
                                         <FontAwesomeIcon icon="pen" />
-                                        {updateLocationLoadingSelector && (location.id === updateLocationId) && <CircularProgress color="secondary" />}
+                                        {updateLocationLoadingSelector && (location.locationId === updateLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
                                     <Button variant="outlined" color="secondary" style={{marginLeft: '0.5rem'}} aria-label="delete" onClick={() => removeLocation(location)}>
                                         <FontAwesomeIcon icon="trash-alt" />
-                                        {deleteLocationLoadingSelector && (location.id === deleteLocationId) && <CircularProgress color="secondary" />}
+                                        {deleteLocationLoadingSelector && (location.locationId === deleteLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
                                 </ListItem>
                             ))}
