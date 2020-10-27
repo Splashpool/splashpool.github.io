@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Countries from './Countries';
 import Grid from '@material-ui/core/Grid';
 import Button from "@material-ui/core/Button";
 import AddIcon from '@material-ui/icons/Add';
@@ -141,6 +142,7 @@ export default function AddLocation() {
                             label="City"
                             type="text"
                             fullWidth
+                            required
                             value={city}
                             onChange={handleCityChange}
                         />
@@ -153,6 +155,7 @@ export default function AddLocation() {
                             value={postCode}
                             onChange={handlePostCodeChange}
                         />
+                        <Countries />
                     </form>
                 </DialogContent>
                 <DialogActions>

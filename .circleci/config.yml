@@ -10,8 +10,8 @@ jobs:
         - node/install-packages
         - run:
             command: npm run test
-        - run:
-            command: npm run build
+        - run: 
+            command: npm run deploy
 workflows:
   build-deploy:
     jobs:
