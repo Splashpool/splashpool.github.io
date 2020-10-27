@@ -3,9 +3,6 @@ orbs:
   node: circleci/node@4.1.0
 jobs:
   test-and-build:
-    branches:
-      ignore:
-        - gh-pages
     executor:
       name: node/default
     steps:
@@ -21,4 +18,7 @@ jobs:
 workflows:
   build-deploy:
     jobs:
-      - test-and-build
+      - test-and-build:
+          filters:
+            branches:
+              only: master
