@@ -19,7 +19,7 @@ export default function SwitchesGroup() {
   return (
     <FormControl component="fieldset">
       <FormLabel  className="spl-filterTitle">
-        Filter Result
+        Filters
       </FormLabel>
       <FormGroup>
         <FormControlLabel
