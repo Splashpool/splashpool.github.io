@@ -19,12 +19,12 @@ const useStyles = makeStyles((theme) => ({
 const options = countryList().getData();
 console.log(options);
 
-let simpleList = () => {
-    options.map(function (item) {
-        console.log(item.value);
-        return (<MenuItem value={item.value}>{item.label}</MenuItem>);
-    });
-};
+// let simpleList = () => {
+//     options.map(function (item) {
+//         console.log(item.value);
+//         return (<MenuItem value={item.value}>{item.label}</MenuItem>);
+//     });
+// };
 
 const handleCountryChange = () => {}
 
@@ -32,7 +32,6 @@ export default function Countries() {
     const classes = useStyles();
     return (
         <div>
-
             <FormControl className={classes.formControl}>
                 <InputLabel id="country">Country</InputLabel>
                 <Select
@@ -43,7 +42,7 @@ export default function Countries() {
                     onChange={handleCountryChange}
                 >
                     {options.map( (item) => {
-                    console.log(item.value);
+                    //console.log(item.value);
                     return (<MenuItem value={item.value}>{item.label}</MenuItem>);
                      })}
                 </Select>

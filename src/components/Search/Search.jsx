@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from "@material-ui/icons/Search";
@@ -19,7 +19,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 // import { Redirect } from 'react-router';
 // import { Home, LocationSearching } from '@material-ui/icons';
-import MapView from '../MapView';
+//import MapView from '../MapView';
 import Filter from '../Filter';
 
 class Search extends Component {
@@ -45,12 +45,14 @@ class Search extends Component {
         {
             console.log(`${buttonText} Clicked2`);
             // this.setState({ geoClicked: true });
-            this.state.geoClicked = true;
+            //this.state.geoClicked = true;
+            this.setState({geoClicked: true});
         }
         else // can only be gelocation or savedLocations button clicked.
         {
             console.log(`${buttonText} Clicked3`);
-            this.state.saveLocsClicked = true;
+            //this.state.saveLocsClicked = true;
+            this.setState({saveLocsClicked: true});
         }
         console.log(this.state.geoClicked.toString());
         console.log(this.state.saveLocsClicked.toString());

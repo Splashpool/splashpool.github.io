@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { getLocation, deleteLocation, updateLocationStatus } from '../store/location/locationAction';
+import { getLocation, deleteLocation } from '../store/location/locationAction';
 import { locationList, getLocationLoading, deleteLocationLoading, updateLocationLoading } from '../store/location/locationSelector';
 import AddLocation from './AddLocation';
 
@@ -21,14 +21,14 @@ export default function ListLocation() {
     const [deleteLocationId, setDeleteLocationId] = useState(null);
     const [updateLocationId, setUpdateLocationId] = useState(null);
 
+    const getLocationList = () => {
+        dispatch(getLocation());
+    }
 
     useEffect(() => {
         getLocationList();
     }, []);
 
-    const getLocationList = () => {
-        dispatch(getLocation());
-    }
 
     const removeLocation = (location) => {
         setDeleteLocationId(location.locationId);
