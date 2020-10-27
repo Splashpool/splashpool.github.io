@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { getLocation, deleteLocation, updateLocationStatus } from '../store/location/locationAction';
+import { getLocation, deleteLocation } from '../store/location/locationAction';
 import { locationList, getLocationLoading, deleteLocationLoading, updateLocationLoading } from '../store/location/locationSelector';
 import AddLocation from './AddLocation';
 
@@ -21,22 +21,22 @@ export default function ListLocation() {
     const [deleteLocationId, setDeleteLocationId] = useState(null);
     const [updateLocationId, setUpdateLocationId] = useState(null);
 
+    const getLocationList = () => {
+        dispatch(getLocation());
+    }
 
     useEffect(() => {
         getLocationList();
     }, []);
 
-    const getLocationList = () => {
-        dispatch(getLocation());
-    }
 
     const removeLocation = (location) => {
-        setDeleteLocationId(location.id);
-        dispatch(deleteLocation(location.id));
+        setDeleteLocationId(location.locationId);
+        dispatch(deleteLocation(location.locationId));
     }
 
     const updateLocationStatus = (location) => {
-        setUpdateLocationId(location.id);
+        setUpdateLocationId(location.locationId);
         dispatch(updateLocationStatus({
           ...location
         }))
@@ -65,15 +65,15 @@ export default function ListLocation() {
                     <div>
                         <List>
                             {locationListSelector.map(location => (
-                                <ListItem key={location.id}>
+                                <ListItem key={location.locationId}>
                                     <ListItemText primary={location.locationName} />
                                     <Button variant="contained" color="primary" aria-label="update" onClick={() => updateLocationStatus(location)}>
                                         <FontAwesomeIcon icon="pen" />
-                                        {updateLocationLoadingSelector && (location.id === updateLocationId) && <CircularProgress color="secondary" />}
+                                        {updateLocationLoadingSelector && (location.locationId === updateLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
                                     <Button variant="outlined" color="secondary" style={{marginLeft: '0.5rem'}} aria-label="delete" onClick={() => removeLocation(location)}>
                                         <FontAwesomeIcon icon="trash-alt" />
-                                        {deleteLocationLoadingSelector && (location.id === deleteLocationId) && <CircularProgress color="secondary" />}
+                                        {deleteLocationLoadingSelector && (location.locationId === deleteLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
                                 </ListItem>
                             ))}

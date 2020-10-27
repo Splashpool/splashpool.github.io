@@ -6,8 +6,6 @@ import Container from "@material-ui/core/Container";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
 import Profile from "./components/Profile";
 import LocationDetails from "./components/LocationDetails";
 import "fontsource-montserrat";
@@ -107,8 +105,6 @@ const App = () => {
               </Route>
               <Route path="/search" component={Search} />
               <Route path="/manage-locations" component={ManageLocations} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
               <ProtectedRoute path="/profile" component={Profile} />
               <Route
                 path="/location-details/:number"

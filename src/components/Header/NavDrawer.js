@@ -6,8 +6,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
 import RoomIcon from '@material-ui/icons/Room';
 import SearchIcon from '@material-ui/icons/Search';
-import LockIcon from '@material-ui/icons/Lock';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const styles = theme => ({
     drawerPaper: { width: 'inherit',
@@ -81,22 +79,6 @@ class NavDrawer extends Component {
                     <SearchIcon />
                   </ListItemIcon>
                   <ListItemText primary={"Search"} />
-                </ListItem>
-              </Link>
-              <Link to="/login" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <LockIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Login"} />
-                </ListItem>
-              </Link>
-              <Link to="/register" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <ExitToAppIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Register"} />
                 </ListItem>
               </Link>
             </List>

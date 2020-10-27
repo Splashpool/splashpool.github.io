@@ -1,4 +1,3 @@
-import map from "../assets/images/map.png"; // relative path to image
 import React, { useRef, useEffect } from "react";
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -41,9 +40,9 @@ const MapView = ({ props }) => {
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     map.addControl(geolocate.on('geolocate', function (e) {
       var lon = e.coords.longitude;
-      var lat = e.coords.latitude
+      var lat = e.coords.latitude;
       var position = [lon, lat];
-      // console.log(position);
+      console.log(position);
 
     })
     );
