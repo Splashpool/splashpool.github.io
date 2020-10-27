@@ -40,7 +40,6 @@ export const deleteLocation = (locationId) => async (dispatch) => {
     try {
         dispatch({ type: locationActionType.DELETE_LOCATION_BEGINS });
         await axios.delete(`${apiConfig.API_BASE_URL}/locations?locationId=${locationId}`);
-        console.log('Eva', locationId);
             dispatch({
                 type: locationActionType.DELETE_LOCATION_SUCCESS,
                 payload: locationId

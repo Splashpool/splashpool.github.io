@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import countryList from 'react-select-country-list';
+
 import { useDispatch, useSelector } from 'react-redux';
-import Countries from './Countries';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from "@material-ui/core/Button";
 import AddIcon from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -15,7 +21,19 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { addLocation } from '../store/location/locationAction';
 import { addLocationLoading } from '../store/location/locationSelector';
 
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+        minWidth: 300,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
+}));
+
 export default function AddLocation() {
+    const classes = useStyles();
+    const options = countryList().getData();
+
     const dispatch = useDispatch();
     const [open, setOpen] = React.useState(false);
     const [locationName, setLocationName] = useState('');
@@ -23,6 +41,7 @@ export default function AddLocation() {
     const [address2, setAddress2] = useState('');
     const [city, setCity] = useState('');
     const [postCode, setPostCode] = useState('');
+    const [country, setCountry] = useState('');
     const addLocationLoadingSelector = useSelector(addLocationLoading);
 
     const clearState = () => {
@@ -31,6 +50,7 @@ export default function AddLocation() {
         setAddress2('');
         setCity('');
         setPostCode('');
+        setCountry('');
     }
 
     const handleLocationNameChange = (e) => {
@@ -45,6 +65,10 @@ export default function AddLocation() {
     const handleCityChange = (e) => {
         setCity(e.target.value);
     }
+    const handleCountryChange = (e) => {
+        setCountry(e.target.value);
+    };
+
     const handlePostCodeChange = (e) => {
         setPostCode(e.target.value);
     }
@@ -59,7 +83,7 @@ export default function AddLocation() {
     };
 
     const handleSubmit = async () => {
-        console.log(locationName, address1, address2, city, postCode);
+        console.log(locationName, address1, address2, city, postCode, country);
         try {
             await dispatch(addLocation({
                 locationName: locationName,
@@ -67,7 +91,7 @@ export default function AddLocation() {
                 address2: address2,
                 city: city,
                 postCode: postCode,
-                country: "",
+                country: country,
                 longitude: 21.455,
                 latitude: 100.9876,
                 adminOrg: "",
@@ -90,8 +114,6 @@ export default function AddLocation() {
             console.log(error);
         }
     }
-
-
 
     return (
         <div>
@@ -155,13 +177,26 @@ export default function AddLocation() {
                             value={postCode}
                             onChange={handlePostCodeChange}
                         />
-                        <Countries />
+                        <FormControl className={classes.formControl}>
+                            <InputLabel id="country">Country</InputLabel>
+                            <Select
+                                labelId="country"
+                                id="country"
+                                required
+                                value={country}
+                                onChange={handleCountryChange}
+                            >
+                                {options.map((item) => {
+                                    return (<MenuItem key={item.value} value={item.value}>{item.label}</MenuItem>);
+                                })}
+                            </Select>
+                        </FormControl>
                     </form>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
                         Cancel
-          </Button>
+                    </Button>
                     <Button onClick={() => handleSubmit()} color="primary">
                         Add Location
                         {addLocationLoadingSelector && <CircularProgress />}
