@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
@@ -21,13 +21,20 @@ export default function ListLocation() {
     const [deleteLocationId, setDeleteLocationId] = useState(null);
     const [updateLocationId, setUpdateLocationId] = useState(null);
 
-    const getLocationList = () => {
-        dispatch(getLocation());
-    }
+    // const getLocationList = () => {
+    //     dispatch(getLocation());
+    // }
 
+    // useEffect(() => {
+    //     getLocationList();
+    // }, []);
+
+    const getLocationList = useCallback(() => {
+        dispatch(getLocation());
+    }, [dispatch]);
     useEffect(() => {
         getLocationList();
-    }, []);
+    }, [getLocationList]);
 
 
     const removeLocation = (location) => {
