@@ -98,7 +98,7 @@ const MapView = ({ props }) => {
       console.log(results);
 
       const r=  await FetchData({ longitude: lng, latitude: lat });
-      console.log(r);
+      //console.log(r);
       // update "random-points-data" source with new data
       // all layers that consume the "random-points-data" data source will be updated automatically
       map.getSource("random-points-data").setData(r);

@@ -2,13 +2,14 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 
 
-const  FetchData =({long,lat}) => {
-   
+async function  FetchData ({ longitude: centerLon, latitude: centerLat }) {
+    var self = this;
     const newFeaturesList = [];
+    
      // Simple GET request using fetch
-     fetch(`https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?longitude=${long}&latitude=${lat}`)
+    var data= await fetch(`https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?longitude=${centerLon}&latitude=${centerLat}`)
      .then(response => response.json())
-     .then(data => data.forEach(element => {
+     .then(data =>  data.forEach(element => {
          let id =element.locationId;
          newFeaturesList.push({
                 type: 'Feature',
@@ -71,12 +72,6 @@ const  FetchData =({long,lat}) => {
         features: newFeaturesList,
     });
 };
-
-/**
- * Generates a random point within 0.025 radius of map center coordinates.
- * @param {CoordinatePair} centerCoordinates - the {@link CoordinatePair} for the map center
- * @return {CoordinatePair} randomly generated coordinate pair
- */
 
 
 
