@@ -1,8 +1,10 @@
 https://splashpool.github.io
 
+![alt text](https://github.com/Splashpool/splashpool.github.io/blob/master/public/oasis_screenshot.jpg?raw=true)
 
+This project was created as a part of the TechReturners training programme.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### You can access the app here: https://splashpool.github.io
 
 ## Available Scripts
 
