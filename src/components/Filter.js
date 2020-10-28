@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import SwitchesGroup from "./SwitchesGroup";
+import SwitchesGroup from "./Filters/SwitchesGroup";
 import MapView from "./MapView";
 
 const locations = [
@@ -42,7 +42,7 @@ const locations = [
   },
 ];
 
-function Filter({searchString}) {
+function Filter({ searchString }) {
   console.log(`${searchString} was given to Filter`);
   const filterData = (locations, state) => {
     if (locations === undefined) throw new Error("locations is required");

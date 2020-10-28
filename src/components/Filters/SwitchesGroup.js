@@ -4,23 +4,20 @@ import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
-import "../App.css";
+import "../../App.css";
+import { useState } from "react";
 
-export default function SwitchesGroup() {
-  const [state, setState] = React.useState({
-    water: true,
-    toilet: true,
-  });
+export default function SwitchesGroup(props) {
+  const [state, setState] = useState({ water: true, toilet: true });
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.checked });
+    props.filterResults();
   };
 
   return (
     <FormControl component="fieldset">
-      <FormLabel  className="spl-filterTitle">
-        Filters
-      </FormLabel>
+      <FormLabel className="spl-filterTitle">Filter Results</FormLabel>
       <FormGroup>
         <FormControlLabel
           control={
