@@ -72,7 +72,7 @@ export default function ListLocation() {
                     <div>
                         <List>
                             {locationListSelector.map(location => (
-                                <ListItem key={location.locationId}>
+                                <ListItem key={location.id}>
                                     <ListItemText primary={location.locationName} />
                                     <Button variant="contained" color="primary" aria-label="update" onClick={() => updateLocationStatus(location)}>
                                         <FontAwesomeIcon icon="pen" />

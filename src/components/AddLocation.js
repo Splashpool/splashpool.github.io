@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import countryList from 'react-select-country-list';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -84,6 +85,12 @@ export default function AddLocation() {
 
     const handleSubmit = async () => {
         console.log(locationName, address1, address2, city, postCode, country);
+
+        const geoCodingData = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${postCode}&key=${process.env.REACT_APP_GEOCODING_API_KEY}`);
+        const locationData = geoCodingData.data.results[0].geometry.location;
+
+        // const postcodesApiData = await axios.get(`https://api.postcodes.io/postcodes/${postCode}`);
+        // const locationData = postcodesApiData.data.result;
         try {
             await dispatch(addLocation({
                 locationName: locationName,
@@ -92,8 +99,11 @@ export default function AddLocation() {
                 city: city,
                 postCode: postCode,
                 country: country,
-                longitude: 21.455,
-                latitude: 100.9876,
+                // This works with postcodeApiData
+                // longitude: locationData.longitude,
+                // latitude: locationData.latitude,
+                longitude: locationData.lng,
+                latitude: locationData.lat,
                 adminOrg: "",
                 water: false,
                 drinkable: false,
