@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography";
@@ -9,7 +10,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { getLocation, deleteLocation } from '../store/location/locationAction';
-import { locationList, getLocationLoading, deleteLocationLoading, updateLocationLoading } from '../store/location/locationSelector';
+import { locationList, getLocationLoading, deleteLocationLoading, updateLocationLoading} from '../store/location/locationSelector';
 import AddLocation from './AddLocation';
 
 export default function ListLocation() {
@@ -20,14 +21,6 @@ export default function ListLocation() {
     const updateLocationLoadingSelector = useSelector(updateLocationLoading);
     const [deleteLocationId, setDeleteLocationId] = useState(null);
     const [updateLocationId, setUpdateLocationId] = useState(null);
-
-    // const getLocationList = () => {
-    //     dispatch(getLocation());
-    // }
-
-    // useEffect(() => {
-    //     getLocationList();
-    // }, []);
 
     const getLocationList = useCallback(() => {
         dispatch(getLocation());
@@ -45,9 +38,9 @@ export default function ListLocation() {
     const updateLocationStatus = (location) => {
         setUpdateLocationId(location.locationId);
         dispatch(updateLocationStatus({
-          ...location
+            ...location
         }))
-      }
+    }
 
     return (
         <div>
@@ -62,13 +55,13 @@ export default function ListLocation() {
                     >
                         Manage Locations
                     </Typography>
-                    {!getLocationLoadingSelector && (locationListSelector.length === 0) && 
-                    <Typography variant="body1" gutterBottom className="spl--pb">
-                        Locations list empty.
+                    {!getLocationLoadingSelector && (locationListSelector.length === 0) &&
+                        <Typography variant="body1" gutterBottom className="spl--pb">
+                            Locations list empty.
                     </Typography>
                     }
                     {getLocationLoadingSelector && <LinearProgress />}
-                        <AddLocation />
+                    <AddLocation />
                     <div>
                         <List>
                             {locationListSelector.map(location => (
@@ -78,10 +71,15 @@ export default function ListLocation() {
                                         <FontAwesomeIcon icon="pen" />
                                         {updateLocationLoadingSelector && (location.locationId === updateLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
-                                    <Button variant="outlined" color="secondary" style={{marginLeft: '0.5rem'}} aria-label="delete" onClick={() => removeLocation(location)}>
+                                    <Button variant="outlined" color="secondary" style={{ marginLeft: '0.5rem' }} aria-label="delete" onClick={() => removeLocation(location)}>
                                         <FontAwesomeIcon icon="trash-alt" />
                                         {deleteLocationLoadingSelector && (location.locationId === deleteLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
+                                    <Link to={`/location/${location.locationId}`}>
+                                        <Button variant="outlined" color="primary" style={{ marginLeft: '0.5rem' }} aria-label="display">
+                                            <FontAwesomeIcon icon="eye" />
+                                        </Button>
+                                    </Link>
                                 </ListItem>
                             ))}
                         </List>

@@ -18,6 +18,7 @@ import {
   faTrash,
   faTrashAlt,
   faPen,
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 import Copyright from "./components/Copyright";
 import Header from "./components/Header/Header";
@@ -27,7 +28,7 @@ import ProtectedRoute from "./auth/protected-route";
 //import axios from "axios";
 import ManageLocations from "./components/ManageLocations";
 
-library.add(fab, faHandHoldingWater, faTrash, faTrashAlt, faPen);
+library.add(fab, faHandHoldingWater, faTrash, faTrashAlt, faPen, faEye);
 
 const theme = createMuiTheme({
   palette: {
