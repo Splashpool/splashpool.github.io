@@ -27,7 +27,8 @@ import Button from '@material-ui/core/Button';
 
 function LocationDetails(features) {
     var data ={};
-   // console.log(features.features);
+    console.log(features);
+
     if (features.features) {
      data  = features.features.properties;
     } else {
@@ -52,20 +53,23 @@ function LocationDetails(features) {
     return (
 
         <Grid container spacing={0}>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
 
                 {/* to get this line working you need to install -> npm install material-ui-rating
                  and  npm install @material-ui/icons */}
 
 
-                <Card className="spl-root">
-                    <CardActionArea>
+                {/* <Card className="spl-root">
+                    <CardActionArea> */}
+
                         <img
                             className="spl-media"
                             src="https://images.freeimages.com/images/large-previews/113/water-from-spring-1426253.jpg"
                             alt="Contemplative Reptile"
                         />
-                        <CardContent>
+                        </Grid>
+                        <Grid item xs={12}  sm={6}>
+                        {/* <CardContent> */}
                             <Typography variant="h5">Rating</Typography>
 
                             <Rating
@@ -86,21 +90,24 @@ function LocationDetails(features) {
                                     <FormControlLabel value="unkown" control={<Radio color="primary" />} label="Unkown" />
                                 </RadioGroup>
                             </FormControl>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
+                            </Grid>
+                        {/* </CardContent> */}
+                    {/* </CardActionArea> */}
+                    {/* <CardActions> */}
+                    <Grid item xs={12}>
                         <Button size="small" color="primary">
                             Report a problem
                         </Button>
                         <Button size="small" variant="contained" color="primary" disableElevation>
                             Notify me
                         </Button>
-                    </CardActions>
+                        </Grid>
+                    {/* </CardActions>
                 </Card>
+ */}
 
 
-
-            </Grid>
+            
 
 
         </Grid>
