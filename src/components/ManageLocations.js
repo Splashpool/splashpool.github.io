@@ -75,7 +75,7 @@ export default function ListLocation() {
                                         <FontAwesomeIcon icon="trash-alt" />
                                         {deleteLocationLoadingSelector && (location.locationId === deleteLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
-                                    <Link to={`/location/${location.locationId}`}>
+                                    <Link to={`/location-details/${location.locationId}`}>
                                         <Button variant="outlined" color="primary" style={{ marginLeft: '0.5rem' }} aria-label="display">
                                             <FontAwesomeIcon icon="eye" />
                                         </Button>
