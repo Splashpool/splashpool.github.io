@@ -27,6 +27,7 @@ export const addLocation = (locationData) => async (dispatch) => {
                 type: locationActionType.ADD_LOCATION_SUCCESS,
                 payload: result.data
             });
+            dispatch(getLocation());
             toast.success('Location Added Successfully!');
     } catch (error) {
         console.log(error);

@@ -187,7 +187,7 @@ export default function AddLocation() {
                                 onChange={handleCountryChange}
                             >
                                 {options.map((item) => {
-                                    return (<MenuItem key={item.value} value={item.value}>{item.label}</MenuItem>);
+                                    return (<MenuItem key={item.value} value={item.label}>{item.label}</MenuItem>);
                                 })}
                             </Select>
                         </FormControl>
