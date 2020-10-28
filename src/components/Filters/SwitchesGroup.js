@@ -12,7 +12,11 @@ export default function SwitchesGroup(props) {
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.checked });
-    props.filterResults();
+    if(e.target.name === 'water'){
+      props.filterResults(e.target.checked, state.toilet);
+    } else if (e.target.name === 'toilet'){
+      props.filterResults(state.water, e.target.checked);
+    }
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { StylesProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
@@ -24,7 +24,7 @@ import Header from "./components/Header/Header";
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
-import axios from "axios";
+//import axios from "axios";
 import ManageLocations from "./components/ManageLocations";
 
 library.add(fab, faHandHoldingWater, faTrash, faTrashAlt, faPen);
