@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 
 
-async function FetchData({ LocationId: LocationId }) {
+async function FetchLocation({ LocationId: LocationId }) {
     var self = this;
     const newFeaturesList = [];
     console.log(LocationId);
@@ -24,4 +24,4 @@ async function FetchData({ LocationId: LocationId }) {
 
 
 
-export default FetchData;
+export default FetchLocation;

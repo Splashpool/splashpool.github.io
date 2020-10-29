@@ -28,25 +28,31 @@ import { locationList, getLocationLoading} from '../store/location/locationSelec
 
 
 const LocationDetails = (features) => {
+    
 //     let d=  useEffect(() => {
 
-//         return ( FetchLocation({ LocationId: parseInt(features.match.params.number) }));
+//         
 
 //     }, [features.match.params.number]);
 //  console.log(d);
-const dispatch = useDispatch();
-const locationListSelector = useSelector(locationList);
-const getLocationList = useCallback( () => {
-     dispatch(getLocation());
-}, [dispatch]);
-useEffect( () => {
-     getLocationList();
-}, [getLocationList]);
+// const dispatch = useDispatch();
+// const locationListSelector = useSelector(locationList);
+// const getLocationList = useCallback( () => {
+//      dispatch(getLocation());
+// }, [dispatch]);
+// useEffect( () => {
+//      getLocationList();
+// }, [getLocationList]);
 
-const result = locationListSelector.filter(loc=>( loc.locationId== parseInt(features.match.params.number))
-   )
-console.log('result  :',result.locationId);
-    var data = { id: 1, name: 'name', description: 'descriptionn', status: 'unkown', stars: 2 };
+
+let result=FetchLocation({ LocationId: parseInt(features.match.params.number)});
+var data = { id: 1, name: 'name', description: 'descriptionn', status: 'drinkable', stars: 4 };
+
+console.log(result);
+// const result = locationListSelector.filter( loc=>( loc.locationId== parseInt(features.match.params.number))
+//    )
+
+   
     // }
     // const [value, setValue] = React.useState('drinkable');
     //   console.log('features kkkkkkk',features.features.properties); 
@@ -88,7 +94,7 @@ console.log('result  :',result.locationId);
             </Grid>
             <Grid item xs={12} sm={6}>
                 {/* <CardContent> */}
-                <Typography variant="h5">Rating {result.locationId}</Typography>
+                <Typography variant="h5">Rating</Typography>
 
                 <Rating
                     value={data.stars}
@@ -131,6 +137,7 @@ console.log('result  :',result.locationId);
         </Grid>
 
     );
+
 }
 
 export default LocationDetails;
