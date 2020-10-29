@@ -1,23 +1,21 @@
-import { useEffect, useState } from 'react';
-import axios from "axios";
 
 
-async function FetchLocation({ LocationId: LocationId }) {
-    var self = this;
+async function FetchLocation({ LocationId }) {
+    
     const newFeaturesList = [];
     console.log(LocationId);
     // Simple GET request using fetch
-    var data = await fetch(`https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?locationId=${LocationId}`)
+    await fetch(`https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?locationId=${LocationId}`)
         .then(response => response.json())
         .then(data => data.map(element => {
-            newFeaturesList.push(element)
+        return    newFeaturesList.push(element)
 
         })
 
         );
     
     return Promise.resolve(
-        newFeaturesList
+     newFeaturesList
 
     );
 };
