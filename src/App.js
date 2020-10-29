@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from "react";
 import { StylesProvider } from "@material-ui/core/styles";
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 import Container from "@material-ui/core/Container";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -10,53 +10,58 @@ import Profile from "./components/Profile";
 import LocationDetails from "./components/LocationDetails";
 import "fontsource-montserrat";
 import Search from "./components/Search/Search.jsx";
-import Filter from "./components/Filter";
+import Filters from "./components/Filters/Filters";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faHandHoldingWater, faTrash, faTrashAlt, faPen } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHandHoldingWater,
+  faTrash,
+  faTrashAlt,
+  faPen,
+  faEye,
+} from "@fortawesome/free-solid-svg-icons";
 import Copyright from "./components/Copyright";
-import Header from './components/Header/Header';
+import Header from "./components/Header/Header";
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
-import axios from "axios";
-import ManageLocations from './components/ManageLocations';
+//import axios from "axios";
+import ManageLocations from "./components/ManageLocations";
 
-
-library.add(fab, faHandHoldingWater, faTrash, faTrashAlt, faPen);
+library.add(fab, faHandHoldingWater, faTrash, faTrashAlt, faPen, faEye);
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#1FB0F5',
+      main: "#1FB0F5",
     },
   },
   typography: {
     fontFamily: [
       '"Montserrat"',
-      'BlinkMacSystemFont',
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-    ].join(','),
+      "Arial",
+      "sans-serif",
+    ].join(","),
   },
 });
 
 const App = () => {
   const { isLoading } = useAuth0();
 
-  useEffect(() => {
-    axios.get('https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations', { crossdomain: true }
-    )
-    .then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    }, []
-    )
-  });
+  // useEffect(() => {
+  //   axios.get('https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations', { crossdomain: true }
+  //   )
+  //   .then((response) => {
+  //     console.log(response);
+  //   }, (error) => {
+  //     console.log(error);
+  //   }, []
+  //   )
+  // });
 
   if (isLoading) {
     return <Loading />;
@@ -101,7 +106,7 @@ const App = () => {
           <Container maxWidth="md">
             <Switch>
               <Route path="/locations">
-                <Filter />
+                <Filters />
               </Route>
               <Route path="/search" component={Search} />
               <Route path="/manage-locations" component={ManageLocations} />
@@ -118,6 +123,6 @@ const App = () => {
       </StylesProvider>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -16,20 +16,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const options = countryList().getData();
-console.log(options);
-
-// let simpleList = () => {
-//     options.map(function (item) {
-//         console.log(item.value);
-//         return (<MenuItem value={item.value}>{item.label}</MenuItem>);
-//     });
-// };
-
-const handleCountryChange = () => {}
-
 export default function Countries() {
     const classes = useStyles();
+
+    const options = countryList().getData();
+    console.log(options);
+
+    const [country, setCountry] = React.useState('');
+
+    const handleChange = (event) => {
+        setCountry(event.target.value);
+    };
     return (
         <div>
             <FormControl className={classes.formControl}>
@@ -38,13 +35,12 @@ export default function Countries() {
                     labelId="country"
                     id="country"
                     required
-                    //value={country}
-                    onChange={handleCountryChange}
+                    value={country}
+                    onChange={handleChange}
                 >
-                    {options.map( (item) => {
-                    //console.log(item.value);
-                    return (<MenuItem value={item.value}>{item.label}</MenuItem>);
-                     })}
+                    {options.map((item) => {
+                        return (<MenuItem key={item.value} value={item.value}>{item.label}</MenuItem>);
+                    })}
                 </Select>
             </FormControl>
 

@@ -69,7 +69,7 @@ class Header extends React.Component {
           
           <div id="geocoder" className="geocoder"></div>
           <Typography variant="h6" className={classes.title}>
-            Photos
+            Oasis
           </Typography>
             <div>
             <AuthNav />
