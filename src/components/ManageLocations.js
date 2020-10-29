@@ -47,13 +47,14 @@ export default function ListLocation() {
 
         search.removeChild(search.childNodes[0]);
     }
+
     return (
         <div>
             <Grid container spacing={0}>
                 <Grid item md></Grid>
                 <Grid item xs={12} md={6}>
                     <Typography
-                        variant="h3"
+                        variant="h4"
                         component="h1"
                         gutterBottom
                         className="spl--pb spl--pt"
@@ -69,8 +70,8 @@ export default function ListLocation() {
                     <AddLocation />
                     <div>
                         <List>
-                            {locationListSelector.map(location => (
-                                <ListItem key={location.id}>
+                            {locationListSelector.map((location, index) => (
+                                <ListItem key={index}>
                                     <ListItemText primary={location.locationName} />
                                     <Button variant="contained" color="primary" aria-label="update" onClick={() => updateLocationStatus(location)}>
                                         <FontAwesomeIcon icon="pen" />
@@ -80,7 +81,7 @@ export default function ListLocation() {
                                         <FontAwesomeIcon icon="trash-alt" />
                                         {deleteLocationLoadingSelector && (location.locationId === deleteLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
-                                    <Link to={`/location-details/${location.locationId}`}>
+                                    <Link to={`/location/${location.locationId}`}>
                                         <Button variant="outlined" color="primary" style={{ marginLeft: '0.5rem' }} aria-label="display">
                                             <FontAwesomeIcon icon="eye" />
                                         </Button>

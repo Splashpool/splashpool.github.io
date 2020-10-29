@@ -22,6 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Copyright from "./components/Copyright";
 import Header from "./components/Header/Header";
+import SingleLocation from "./components/SingleLocation";
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
@@ -110,6 +111,7 @@ const App = () => {
               </Route>
               <Route path="/search" component={Search} />
               <Route path="/manage-locations" component={ManageLocations} />
+              <Route path="/location/:locationId" component={SingleLocation} />
               <ProtectedRoute path="/profile" component={Profile} />
               <Route
                 path="/location-details/:number"
