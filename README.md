@@ -10,7 +10,7 @@ likely to increase.
 
 The Oasis application would allow regional users to locate clean water and toilet facilities in their vicinity and report any problems they have encountered. For organisations, managing such facilities, the app can provide a way to monitor their status and receive notifications from the users.   
 
-In this repository, you can find the code for the front end of the Oasis application. It was written by Team Splashpool during the [Tech Returners](https://techreturners.com) Your Return to Tech programme in London Sept-Oct 2020 inclusive. It is a React-redux based front end application based on serverless framework running lambda functions at the backend, connected to an AWS RDS (MySQL) database.
+In this repository, you can find the code for the front end of the Oasis application. It was written by Team Splashpool during the [Tech Returners](https://techreturners.com) Your Return to Tech programme in London Sept-Oct 2020 inclusive. It is a React-redux based front end application based on serverless framework running lambda functions at the backend, connected to an AWS RDS (MySQL) database. The code base for the back end application can be found [here](https://github.com/Splashpool/oasis-app-backend).
 
 ### You can access the application [here](https://splashpool.github.io/).
 
@@ -24,6 +24,10 @@ In this repository, you can find the code for the front end of the Oasis applica
 - Redux
 - material-ui
 - circleci
+- Mapbox API
+
+The Mapbox web services APIs allow you to programmatically access Mapbox tools and services. For this app the Maps and Search APIs were used. For more information and the documentation on how to make changes follow the link [here](https://docs.mapbox.com/api/).
+
 
 ---
 ## Instructions
@@ -46,13 +50,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
-
+```
+npm test
+```
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
+```
+npm run build
+```
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
