@@ -15,16 +15,6 @@ import Button from '@material-ui/core/Button';
 import { getLocation } from '../store/location/locationAction';
 import { locationList } from '../store/location/locationSelector';
 
-
-
-
-
-// ES5
-
-
-
-
-
 const LocationDetails = (features) => {
 
     //     let d=  useEffect(() => {
@@ -62,9 +52,6 @@ const LocationDetails = (features) => {
     const handleChange = (event) => {
         // setValue(event.target.value);
     };
-
-
-
 
     var search = document.getElementById("geocoder");
     // remove search from nav  bar
@@ -115,9 +102,6 @@ const LocationDetails = (features) => {
                         </RadioGroup>
                     </FormControl>
                 </Grid>
-                {/* </CardContent> */}
-                {/* </CardActionArea> */}
-                {/* <CardActions> */}
                 <Grid item xs={12}>
                     <Button size="small" color="primary">
                         Report a problem
@@ -126,14 +110,6 @@ const LocationDetails = (features) => {
                         Notify me
                         </Button>
                 </Grid>
-                {/* </CardActions>
-                </Card>
- */}
-
-
-
-
-
             </Grid>
 
         )
