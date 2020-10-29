@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Grid from "@material-ui/core/Grid";
 import SwitchesGroup from "./SwitchesGroup";
 import MapView from "../MapView";
@@ -17,15 +17,13 @@ function Filter({ searchString }) {
 
   const dispatch = useDispatch();
   const locationListSelector = useSelector(locationList);
-  //const getLocationLoadingSelector = useSelector(getLocationLoading);
 
-  const getLocationList = () => {
+  const getLocationList = useCallback(() => {
     dispatch(getLocation());
-  };
-
+  }, [dispatch]);
   useEffect(() => {
     getLocationList();
-  }, []);
+  }, [getLocationList]);
 
   const waterLocations = locationListSelector.filter(
     (location) => location.water === true
