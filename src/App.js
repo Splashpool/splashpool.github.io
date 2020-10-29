@@ -110,8 +110,8 @@ const App = () => {
                 <Filters />
               </Route>
               <Route path="/search" component={Search} />
-              <Route path="/manage-locations" component={ManageLocations} />
-              <Route path="/location/:locationId" component={SingleLocation} />
+              <ProtectedRoute path="/manage-locations" component={ManageLocations} />
+              <ProtectedRoute path="/location/:locationId" component={SingleLocation} />
               <ProtectedRoute path="/profile" component={Profile} />
               <Route
                 path="/location-details/:number"
