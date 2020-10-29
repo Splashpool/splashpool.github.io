@@ -1,8 +1,8 @@
-import React ,{ useEffect }  from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 //import SwitchesGroup from "./SwitchesGroup";
 import MapView from "./MapView";
-import {useLocation } from "react-router-dom"
+//import {useLocation } from "react-router-dom"
 
 
 // const locations = [
@@ -47,11 +47,11 @@ import {useLocation } from "react-router-dom"
 function Filter(props) {
 
 
-  const filterData = (locations, state) => {
-    if (locations === undefined) throw new Error("locations is required");
-    if (state === undefined) throw new Error("state is required");
-  }
-//     var results = [];
+//   const filterData = (locations, state) => {
+//     if (locations === undefined) throw new Error("locations is required");
+//     if (state === undefined) throw new Error("state is required");
+//   }
+// //     var results = [];
 
 //     if (state.waterOn) {
 //       console.log("water is ON");

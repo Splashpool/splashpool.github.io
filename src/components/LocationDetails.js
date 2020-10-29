@@ -1,5 +1,5 @@
 //import React, { Component } from 'react';
-import React, {  useEffect, useState, useCallback  } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Rating from 'material-ui-rating';
 import Typography from '@material-ui/core/Typography';

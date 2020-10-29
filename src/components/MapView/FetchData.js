@@ -1,13 +1,11 @@
-import {useEffect, useState} from 'react';
-import axios from "axios";
 
 
 async function  FetchData ({ longitude: centerLon, latitude: centerLat }) {
-    var self = this;
+   
     const newFeaturesList = [];
     
      // Simple GET request using fetch
-    var data= await fetch(`https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?longitude=${centerLon}&latitude=${centerLat}`)
+    await fetch(`https://j33niy2o35.execute-api.eu-west-2.amazonaws.com/dev/locations?longitude=${centerLon}&latitude=${centerLat}`)
      .then(response => response.json())
      .then(data =>  data.forEach(element => {
          console.log(element);
