@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import HomeIcon from '@material-ui/icons/Home';
-import MyLocationIcon from '@material-ui/icons/MyLocation';
 import SearchIcon from '@material-ui/icons/Search';
 import SettingsIcon from '@material-ui/icons/Settings';
 
