@@ -1,16 +1,22 @@
 https://splashpool.github.io
 
-![alt text](https://github.com/Splashpool/splashpool.github.io/blob/master/public/oasis_screenshot.jpg?raw=true)
 
 # Oasis App Front End
 
 ## Introduction
 
-This is the front end of the Oasis application written by Team Splashpool during the [Tech Returners](https://techreturners.com) Your Return to Tech programme in London Sept-Oct 2020 inclusive.
-It is a React-redux based front end application based on serverless framework running lambda functions at the backend, connected to an AWS RDS (MySQL) database.
+According to WaterAid, one in ten people in the world don't have access to clean water. With droughts and flooding becoming more common due to climate change, this figure is
+likely to increase. 
+
+The Oasis application would allow regional users to locate clean water and toilet facilities in their vicinity and report any problems they have encountered. For organisations, managing such facilities, the app can provide a way to monitor their status and receive notifications from the users.   
+
+In this repository, you can find the code for the front end of the Oasis application. It was written by Team Splashpool during the [Tech Returners](https://techreturners.com) Your Return to Tech programme in London Sept-Oct 2020 inclusive. It is a React-redux based front end application based on serverless framework running lambda functions at the backend, connected to an AWS RDS (MySQL) database.
 
 ### You can access the application [here](https://splashpool.github.io/).
 
+## Preview
+
+![alt text](https://github.com/Splashpool/splashpool.github.io/blob/master/public/oasis_screenshot.jpg?raw=true)
 
 ### Technology used
 
