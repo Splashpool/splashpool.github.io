@@ -1,6 +1,6 @@
 import React ,{ useEffect }  from "react";
 import Grid from "@material-ui/core/Grid";
-import SwitchesGroup from "./SwitchesGroup";
+//import SwitchesGroup from "./SwitchesGroup";
 import MapView from "./MapView";
 import {useLocation } from "react-router-dom"
 
@@ -50,6 +50,7 @@ function Filter(props) {
   const filterData = (locations, state) => {
     if (locations === undefined) throw new Error("locations is required");
     if (state === undefined) throw new Error("state is required");
+  }
 //     var results = [];
 
 //     if (state.waterOn) {
@@ -87,12 +88,10 @@ function Filter(props) {
         <MapView props={props} />
       </Grid>
       <Grid item xs={12} md={12}>
-        <SwitchesGroup filterResults={filterResults} />
+        {/* <SwitchesGroup filterResults={filterResults} /> */}
       </Grid>
     </Grid>
   );
 }
 
-
-
-// export default Filter;
+ export default Filter;
