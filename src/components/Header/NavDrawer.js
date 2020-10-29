@@ -4,8 +4,8 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui
 import { withStyles } from '@material-ui/core/styles';
 import HomeIcon from '@material-ui/icons/Home';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
-import RoomIcon from '@material-ui/icons/Room';
 import SearchIcon from '@material-ui/icons/Search';
+import SettingsIcon from '@material-ui/icons/Settings';
 
 const styles = theme => ({
     drawerPaper: { width: 'inherit',
@@ -49,36 +49,20 @@ class NavDrawer extends Component {
                   <ListItemText primary={"Home"} />
                 </ListItem>
               </Link>
-              <Link to="/locations" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <MyLocationIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Locations"} />
-                </ListItem>
-              </Link>
               <Link to="/manage-locations" className={classes.link}>
                 <ListItem button>
                   <ListItemIcon>
-                    <MyLocationIcon />
+                    <SettingsIcon />
                   </ListItemIcon>
                   <ListItemText primary={"Manage Locations"} />
                 </ListItem>
               </Link>
-              <Link to="/location-details/:number" className={classes.link}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <RoomIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Locations Details"} />
-                </ListItem>
-              </Link>
-              <Link to="/search" className={classes.link}>
+              <Link to="/locations" className={classes.link}>
                 <ListItem button>
                   <ListItemIcon>
                     <SearchIcon />
                   </ListItemIcon>
-                  <ListItemText primary={"Search"} />
+                  <ListItemText primary={"Search Locations"} />
                 </ListItem>
               </Link>
             </List>

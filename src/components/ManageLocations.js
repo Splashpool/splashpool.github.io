@@ -41,12 +41,12 @@ export default function ListLocation() {
             ...location
         }))
     }
-    var search = document.getElementById("geocoder");
-    // remove search from nav  bar
-    if (search != null && search.childNodes[0]) {
+    // var search = document.getElementById("geocoder");
+    // // remove search from nav  bar
+    // if (search != null && search.childNodes[0]) {
 
-        search.removeChild(search.childNodes[0]);
-    }
+    //     search.removeChild(search.childNodes[0]);
+    // }
 
     return (
         <div>

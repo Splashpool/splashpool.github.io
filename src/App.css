@@ -91,3 +91,8 @@ body {
 .MuiButton-root {
   min-width: 45px;
 }
+
+.responsive {
+  width: 100%;
+  height: auto;
+}

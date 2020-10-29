@@ -28,7 +28,7 @@ const SingleLoaction = ({ match }) => {
             <div>
                 <Grid container spacing={0}>
                     <Grid item md></Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={8}>
                         <Typography
                             variant="h4"
                             component="h1"
@@ -38,7 +38,8 @@ const SingleLoaction = ({ match }) => {
                             {locationData.locationName}
 
                         </Typography>
-                        <Typography variant="body1" gutterBottom className="spl--pb">
+                        <img src={locationData.pictureURL} alt={locationData.locationName} className="responsive" />
+                        <Typography variant="body1" gutterBottom className="spl--pt">
                             {locationData.address1}
                         </Typography>
                         <Typography variant="body1" gutterBottom className="spl--pb">
@@ -52,7 +53,7 @@ const SingleLoaction = ({ match }) => {
     } return (
         <Grid container spacing={0}>
             <Grid item md></Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={8}>
                 <Typography
                     variant="h4"
                     component="h1"
