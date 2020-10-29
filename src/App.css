@@ -65,14 +65,14 @@ body {
 }
 
 .spl-filterTitle {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
   color: white;
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 
 .map-container {
-  height: 80vh;
+  height: 65vh;
   width: 100%;
   display: block;
 }
