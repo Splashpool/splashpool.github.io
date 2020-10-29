@@ -54,7 +54,7 @@ export default function ListLocation() {
                 <Grid item md></Grid>
                 <Grid item xs={12} md={6}>
                     <Typography
-                        variant="h4"
+                        variant="h5"
                         component="h1"
                         gutterBottom
                         className="spl--pb spl--pt"
