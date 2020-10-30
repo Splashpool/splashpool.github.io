@@ -20,11 +20,18 @@ In this repository, you can find the code for the front end of the Oasis applica
 
 ### Technology used
 
-- React
+
+- ReactJS
 - Redux
-- material-ui
-- circleci
+- JavaScript ES6+
+- HTML
+- CSS
+- Material UI
+- Axios
 - Mapbox API
+- Google Geocode API
+- CircleCI
+
 
 The Mapbox web services APIs allow you to programmatically access Mapbox tools and services. For this app the Maps and Search APIs were used. For more information and the documentation on how to make changes follow the link [here](https://docs.mapbox.com/api/).
 
