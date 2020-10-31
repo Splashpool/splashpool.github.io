@@ -41,12 +41,12 @@ export default function ListLocation() {
             ...location
         }))
     }
-    var search = document.getElementById("geocoder");
-    // remove search from nav  bar
-    if (search != null && search.childNodes[0]) {
+    // var search = document.getElementById("geocoder");
+    // // remove search from nav  bar
+    // if (search != null && search.childNodes[0]) {
 
-        search.removeChild(search.childNodes[0]);
-    }
+    //     search.removeChild(search.childNodes[0]);
+    // }
 
     return (
         <div>
@@ -73,7 +73,12 @@ export default function ListLocation() {
                             {locationListSelector.map((location, index) => (
                                 <ListItem key={index}>
                                     <ListItemText primary={location.locationName} />
-                                    <Button variant="contained" color="primary" aria-label="update" onClick={() => updateLocationStatus(location)}>
+                                    <Link to={`/location/${location.locationId}`}>
+                                        <Button variant="outlined" color="primary" aria-label="display">
+                                            <FontAwesomeIcon icon="eye" />
+                                        </Button>
+                                    </Link>
+                                    <Button variant="contained" color="primary" style={{ marginLeft: '0.5rem' }} aria-label="update" onClick={() => updateLocationStatus(location)}>
                                         <FontAwesomeIcon icon="pen" />
                                         {updateLocationLoadingSelector && (location.locationId === updateLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
@@ -81,11 +86,6 @@ export default function ListLocation() {
                                         <FontAwesomeIcon icon="trash-alt" />
                                         {deleteLocationLoadingSelector && (location.locationId === deleteLocationId) && <CircularProgress color="secondary" />}
                                     </Button>
-                                    <Link to={`/location/${location.locationId}`}>
-                                        <Button variant="outlined" color="primary" style={{ marginLeft: '0.5rem' }} aria-label="display">
-                                            <FontAwesomeIcon icon="eye" />
-                                        </Button>
-                                    </Link>
                                 </ListItem>
                             ))}
                         </List>

@@ -9,7 +9,7 @@ function Copyright() {
     <Box mt={8}>
       <Typography variant="body2" align="center" style={{color: "rgba(255, 255, 255, 0.54)"}}>
         {'Copyright © '}
-        <Link color="inherit" href="/">
+        <Link color="inherit" href="/" className="spl--pb">
           Splashpool
         </Link>{' '}
         {new Date().getFullYear()}

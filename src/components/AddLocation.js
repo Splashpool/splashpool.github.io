@@ -106,7 +106,7 @@ export default function AddLocation() {
                 latitude: locationData.lat,
                 adminOrg: "",
                 water: false,
-                drinkable: false,
+                drinkable: true,
                 treatment: false,
                 unknown: false,
                 largeWaterFacility: false,

@@ -91,6 +91,13 @@ body {
 .MuiButton-root {
   min-width: 45px;
 }
+
 .geocoder{
   margin-bottom: 1rem;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+
 }
