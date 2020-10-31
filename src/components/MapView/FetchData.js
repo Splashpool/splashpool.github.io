@@ -22,7 +22,7 @@ async function  FetchData ({ longitude: centerLon, latitude: centerLat }) {
                     city: element.city,
                     WC: element.maleToilets,
                     Water:  element.water,
-                    stars: 4,
+                    stars:element.rating,
                     status: element.drinkable
                 },
             })

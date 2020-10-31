@@ -152,7 +152,7 @@ const MapView = ({ props }) => {
     return () => map.remove();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return <div className="map-container" ref={mapContainerRef} />;
+  return <div className="map-container" ref={mapContainerRef} />
 };
 
 export default MapView;

@@ -67,7 +67,7 @@ class Header extends React.Component {
             <MenuIcon />
           </IconButton>
           
-          <div id="geocoder" className="geocoder"></div>
+       
           <Typography variant="h6" className={classes.title}>
             Oasis
           </Typography>

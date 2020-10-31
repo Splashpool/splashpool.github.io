@@ -7,12 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./Home.css";
 
 function Header() {
-  var search = document.getElementById("geocoder");
-  // remove search from nav  bar
-  if (search!=null&& search.childNodes[0]) {
-
-    search.removeChild(search.childNodes[0]);
-  }
 
   return (
     <div className="Header" style={{ padding: 20 }}>
