@@ -8,6 +8,12 @@ import { getLocation } from '../store/location/locationAction';
 import { locationList } from '../store/location/locationSelector';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import Box from '@material-ui/core/Box';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import DoneIcon from '@material-ui/icons/Done';
 
 
 const LocationDetails = (features) => {
@@ -40,47 +46,72 @@ const LocationDetails = (features) => {
         return (
 
             <Grid container spacing={0}>
-                <Grid item xs={12} sm={6}>
-
-
-                    <img
-                        className="spl-media"
-                        src="https://images.freeimages.com/images/large-previews/113/water-from-spring-1426253.jpg"
-                        //{`https://oasis-images.s3.eu-west-2.amazonaws.com/location-images/${locationData.locationId}.png`}
-                        alt="img"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item md></Grid>
+                <Grid item xs={12} md={8}>
                     {/* <CardContent> */}
-                    <Typography variant="h5">{locationData.locationName}</Typography>
+                    <Typography
+                        variant="h4"
+                        component="h1"
+                        gutterBottom
+                        className="spl--pb spl--pt"
+                    >
+                        {locationData.locationName}
 
-                    <Rating
-                        value={locationData.rating}
-                        max={5}
-                        onChange={(value) => console.log(`Rated with value ${value}`)}
-                    />
+                    </Typography>
 
-                    <Box display="flex" flexDirection="row">
-                        <Box p={1}>
-                            <CheckBoxIcon />
-                        </Box>
-                        <Box p={1} >
-                            <Typography variant="h6">{drinkable}</Typography>
-                        </Box>
+                    <div className="spl--pb">
+                        <img src={locationData.pictureURL} alt={locationData.locationName} className="responsive" />
+                    </div>
+                    <Grid container spacing={0}>
+                        <Grid item xs={2}>
+                            <Typography
+                                variant="h6"
+                                component="h4"
+                            >
+                                Rating
 
+                        </Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Rating
+                                value={locationData.rating}
+                                max={5}
+                                onChange={(value) => console.log(`Rated with value ${value}`)}
+                            />
+                        </Grid>
+                    </Grid>
 
-                    </Box>
-                    <Box component="span">
+                    <List component="nav" aria-label="location status">
+                    <Divider />
+                        <ListItem>
+                            <ListItemIcon>
+                                <DoneIcon fontSize="large" color="primary" />
+                            </ListItemIcon>
+                            <ListItemText primary={drinkable} />
+                        </ListItem>
+                        <Divider />
+                        <ListItem divider>
+                            <ListItemText inset primary="Needs Treatment" />
+                        </ListItem>
+                        <ListItem >
+                            <ListItemText inset primary="Uknown" />
+                        </ListItem>
+                    </List>
+
+                    <Typography
+                        variant="h6"
+                        component="h3"
+                        className="spl--pb spl--pt"
+                    >
+                        Address
+                        </Typography>
                         <Typography variant="body1" gutterBottom>
                             {locationData.address1}<br></br>
                             {locationData.city}<br></br>
                             {locationData.country}<br></br>
                             {locationData.postCode}<br></br>
                         </Typography>
-                    </Box>
 
-                </Grid>
-                <Grid item xs={12}>
                     <Button size="small" color="primary">
                         Report a problem
                         </Button>
@@ -88,6 +119,7 @@ const LocationDetails = (features) => {
                         Notify me
                         </Button>
                 </Grid>
+                <Grid item md></Grid>
             </Grid>
 
         )
