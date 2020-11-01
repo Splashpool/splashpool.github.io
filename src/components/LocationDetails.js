@@ -6,8 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { getLocation } from '../store/location/locationAction';
 import { locationList } from '../store/location/locationSelector';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
