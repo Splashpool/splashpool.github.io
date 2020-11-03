@@ -74,11 +74,11 @@ export default function ListLocation() {
                                 <ListItem key={index}>
                                     <ListItemText primary={location.locationName} />
                                     <Link to={`/location/${location.locationId}`}>
-                                        <Button variant="outlined" color="primary" aria-label="display">
+                                        <Button variant="contained" color="primary" aria-label="display">
                                             <FontAwesomeIcon icon="eye" />
                                         </Button>
                                     </Link>
-                                    <Button variant="contained" color="primary" style={{ marginLeft: '0.5rem' }} aria-label="update" onClick={() => updateLocationStatus(location)}>
+                                    <Button variant="outlined" color="primary" style={{ marginLeft: '0.5rem' }} aria-label="update" onClick={() => updateLocationStatus(location)}>
                                         <FontAwesomeIcon icon="pen" />
                                         {updateLocationLoadingSelector && (location.locationId === updateLocationId) && <CircularProgress color="secondary" />}
                                     </Button>

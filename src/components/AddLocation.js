@@ -139,7 +139,7 @@ export default function AddLocation() {
                         Please enter your location details here.
                     </DialogContentText>
                     <form noValidate autoComplete="off">
-                        <TextField
+                        <div><TextField
                             margin="dense"
                             id="locationName"
                             label="Location Name"
@@ -150,6 +150,7 @@ export default function AddLocation() {
                             value={locationName}
                             onChange={handleLocationNameChange}
                         />
+                        </div><div>
                         <TextField
                             margin="dense"
                             id="address1"
@@ -159,6 +160,7 @@ export default function AddLocation() {
                             value={address1}
                             onChange={handleAdress1Change}
                         />
+                        </div><div>
                         <TextField
                             margin="dense"
                             id="address2"
@@ -168,6 +170,7 @@ export default function AddLocation() {
                             value={address2}
                             onChange={handleAdress2Change}
                         />
+                        </div><div>
                         <TextField
                             margin="dense"
                             id="city"
@@ -178,6 +181,7 @@ export default function AddLocation() {
                             value={city}
                             onChange={handleCityChange}
                         />
+                        </div><div>
                         <TextField
                             margin="dense"
                             id="postcode"
@@ -187,6 +191,7 @@ export default function AddLocation() {
                             value={postCode}
                             onChange={handlePostCodeChange}
                         />
+                        </div><div>
                         <FormControl className={classes.formControl}>
                             <InputLabel id="country">Country</InputLabel>
                             <Select
@@ -201,6 +206,7 @@ export default function AddLocation() {
                                 })}
                             </Select>
                         </FormControl>
+                        </div>
                     </form>
                 </DialogContent>
                 <DialogActions>

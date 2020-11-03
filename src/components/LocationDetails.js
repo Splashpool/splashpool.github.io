@@ -53,7 +53,11 @@ const LocationDetails = (features) => {
           >
             {locationData.locationName}
           </Typography>
-
+          <Grid container justify="flex-end" className="spl--pb">
+          <Button color="primary" variant="contained">
+            Report a problem
+          </Button>
+          </Grid>
           <div className="spl--pb">
             <img
               src={locationData.pictureURL}
@@ -106,18 +110,6 @@ const LocationDetails = (features) => {
             {locationData.postCode}
             <br></br>
           </Typography>
-
-          <Button size="small" color="primary">
-            Report a problem
-          </Button>
-          <Button
-            size="small"
-            variant="contained"
-            color="primary"
-            disableElevation
-          >
-            Notify me
-          </Button>
         </Grid>
         <Grid item md></Grid>
       </Grid>
