@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Grid from "@material-ui/core/Grid";
-import SwitchesGroup from "./SwitchesGroup";
+//import SwitchesGroup from "./SwitchesGroup";
 import MapView from "../MapView";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -32,24 +32,24 @@ function Filter({ searchString }) {
   const toiletLocations = locationListSelector.filter(
     (location) => (location.femaleToilets || location.maleToilets) === true
   );
-  console.log("waterlocations", waterLocations);
+ // console.log("waterlocations", waterLocations);
 
-  const filterResults = (water, toilet) => {
-    console.log("FilterResults water:", water);
-    console.log("FilterResults toilet:", toilet);
-    if (!water) {
-      setState({ ...state, waterFacilities: [] });
-      setState({ ...state, water: false });
-    } else if (!toilet) {
-      setState({ ...state, toiletFacilities: [] });
-      setState({ ...state, toilet: false });
-    } else {
-      setState({ ...state, waterFacilities: waterLocations });
-      setState({ ...state, toiletFacilities: toiletLocations });
-      setState({ ...state, water: true });
-      setState({ ...state, toilet: true });
-    }
-  };
+  // const filterResults = (water, toilet) => {
+  //   console.log("FilterResults water:", water);
+  //   console.log("FilterResults toilet:", toilet);
+  //   if (!water) {
+  //     setState({ ...state, waterFacilities: [] });
+  //     setState({ ...state, water: false });
+  //   } else if (!toilet) {
+  //     setState({ ...state, toiletFacilities: [] });
+  //     setState({ ...state, toilet: false });
+  //   } else {
+  //     setState({ ...state, waterFacilities: waterLocations });
+  //     setState({ ...state, toiletFacilities: toiletLocations });
+  //     setState({ ...state, water: true });
+  //     setState({ ...state, toilet: true });
+  //   }
+  // };
 
   return (
     <Grid container id="container">
