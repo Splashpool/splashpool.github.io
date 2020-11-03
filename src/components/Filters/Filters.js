@@ -54,12 +54,12 @@ function Filter({ searchString }) {
   return (
     <Grid container id="container">
       <Grid item xs={12} md={12}>
-      <div id="geocoder" className="geocoder"></div>
+        <div id="geocoder" className="geocoder"></div>
         {<MapView searchString={searchString} />}
       </Grid>
-      <Grid item xs={12} md={12}>
+      {/* <Grid item xs={12} md={12}>
         <SwitchesGroup filterResults={filterResults} />
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }
