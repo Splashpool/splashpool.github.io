@@ -43,7 +43,7 @@ const LocationDetails = (features) => {
     return (
       <Grid container spacing={0}>
         <Grid item md></Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12}>
           {/* <CardContent> */}
           <Typography
             variant="h4"
@@ -117,7 +117,7 @@ const LocationDetails = (features) => {
   } else {
     return (
       <Grid container spacing={0}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12}>
           <Typography variant="h5">loading .....</Typography>
         </Grid>
       </Grid>
