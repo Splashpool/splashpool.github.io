@@ -114,7 +114,7 @@ const App = () => {
               <Route path="/search" component={Search} />
               <Route path="/map-view" component={MapView} />
               <Route path="/popup" component={Popup} />
-              <Route path="/manage-locations" component={ManageLocations} />
+              <ProtectedRoute path="/manage-locations" component={ManageLocations} />
               <Route path="/location/:locationId" component={SingleLocation} />
               <ProtectedRoute path="/profile" component={Profile} />
               <Route
