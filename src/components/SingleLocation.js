@@ -63,7 +63,7 @@ const SingleLoaction = ({ match }) => {
                                     Rating
                                 </Typography>
                             </Grid>
-                            <Grid item xs={4}>
+                            <Grid item xs={8}>
                                 <Rating
                                     value={locationData.rating}
                                     max={5}
