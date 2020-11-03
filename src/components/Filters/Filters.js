@@ -1,38 +1,38 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React /*, { useState, useEffect, useCallback } */ from "react";
 import Grid from "@material-ui/core/Grid";
 //import SwitchesGroup from "./SwitchesGroup";
 import MapView from "../MapView";
 
-import { useDispatch, useSelector } from "react-redux";
-import { locationList } from "../../store/location/locationSelector";
-import { getLocation } from "../../store/location/locationAction";
+//import { useDispatch, useSelector } from "react-redux";
+//import { locationList } from "../../store/location/locationSelector";
+//import { getLocation } from "../../store/location/locationAction";
 
 function Filter({ searchString }) {
-//   const [state, setState] = useState({
-//     waterFacilities: [],
-//     toiletFacilities: [],
-//     water: true,
-//     toilet: true,
-//   });
+  //   const [state, setState] = useState({
+  //     waterFacilities: [],
+  //     toiletFacilities: [],
+  //     water: true,
+  //     toilet: true,
+  //   });
 
-//   const dispatch = useDispatch();
-//   const locationListSelector = useSelector(locationList);
+  //   const dispatch = useDispatch();
+  //   const locationListSelector = useSelector(locationList);
 
-//   const getLocationList = useCallback(() => {
-//     dispatch(getLocation());
-//   }, [dispatch]);
-//   useEffect(() => {
-//     getLocationList();
-//   }, [getLocationList]);
+  //   const getLocationList = useCallback(() => {
+  //     dispatch(getLocation());
+  //   }, [dispatch]);
+  //   useEffect(() => {
+  //     getLocationList();
+  //   }, [getLocationList]);
 
-//   const waterLocations = locationListSelector.filter(
-//     (location) => location.water === true
-//   );
+  //   const waterLocations = locationListSelector.filter(
+  //     (location) => location.water === true
+  //   );
 
-//   const toiletLocations = locationListSelector.filter(
-//     (location) => (location.femaleToilets || location.maleToilets) === true
-//   );
-//  // console.log("waterlocations", waterLocations);
+  //   const toiletLocations = locationListSelector.filter(
+  //     (location) => (location.femaleToilets || location.maleToilets) === true
+  //   );
+  //  // console.log("waterlocations", waterLocations);
 
   // const filterResults = (water, toilet) => {
   //   console.log("FilterResults water:", water);
