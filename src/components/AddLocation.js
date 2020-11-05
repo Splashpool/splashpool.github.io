@@ -86,11 +86,11 @@ export default function AddLocation() {
     const handleSubmit = async () => {
         console.log(locationName, address1, address2, city, postCode, country);
 
-        const geoCodingData = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${postCode}&key=${process.env.REACT_APP_GEOCODING_API_KEY}`);
-        const locationData = geoCodingData.data.results[0].geometry.location;
+        // const geoCodingData = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${postCode}&key=${process.env.REACT_APP_GEOCODING_API_KEY}`);
+        // const locationData = geoCodingData.data.results[0].geometry.location;
 
-        // const postcodesApiData = await axios.get(`https://api.postcodes.io/postcodes/${postCode}`);
-        // const locationData = postcodesApiData.data.result;
+        const postcodesApiData = await axios.get(`https://api.postcodes.io/postcodes/${postCode}`);
+        const locationData = postcodesApiData.data.result;
         try {
             await dispatch(addLocation({
                 locationName: locationName,
@@ -99,11 +99,11 @@ export default function AddLocation() {
                 city: city,
                 postCode: postCode,
                 country: country,
-                // This works with postcodeApiData
-                // longitude: locationData.longitude,
-                // latitude: locationData.latitude,
-                longitude: locationData.lng,
-                latitude: locationData.lat,
+                //This works with postcodeApiData
+                longitude: locationData.longitude,
+                latitude: locationData.latitude,
+                // longitude: locationData.lng,
+                // latitude: locationData.lat,
                 adminOrg: "",
                 water: false,
                 drinkable: true,
