@@ -28,8 +28,8 @@ import Loading from "./components/Loading";
 import ProtectedRoute from "./auth/protected-route";
 //import axios from "axios";
 import ManageLocations from "./components/ManageLocations";
-import MapView from './components/MapView';
-import Popup from './components/MapView/Popup'
+import MapView from "./components/MapView";
+import Popup from "./components/MapView/Popup";
 
 library.add(fab, faHandHoldingWater, faTrash, faTrashAlt, faPen, faEye);
 
@@ -114,7 +114,10 @@ const App = () => {
               <Route path="/search" component={Search} />
               <Route path="/map-view" component={MapView} />
               <Route path="/popup" component={Popup} />
-              <ProtectedRoute path="/manage-locations" component={ManageLocations} />
+              <ProtectedRoute
+                path="/manage-locations"
+                component={ManageLocations}
+              />
               <Route path="/location/:locationId" component={SingleLocation} />
               <ProtectedRoute path="/profile" component={Profile} />
               <Route

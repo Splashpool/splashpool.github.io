@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from "@material-ui/icons/Search";
 import GpsFixedTwoToneIcon from '@material-ui/icons/GpsFixedTwoTone';
 import SettingsTwoToneIcon from '@material-ui/icons/SettingsTwoTone';
-import InputAdornment from '@material-ui/core/InputAdornment';
 // import Login from '../Login/Login.jsx';
 // import LocationListing from '../LocationListing.js';
 
@@ -24,23 +24,19 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import Filter from '../Filter';
 
 class Search extends Component {
-    //state = { text:'', geoClicked: false, saveLocsClicked: false, searchEntered: false }
+    
+    state = { value: '', text:'', geoClicked: false, saveLocsClicked: false, searchEntered: false }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: '',
-            geoClicked: false,
-            saveLocsClicked: false,
-            searchEntered: false
-        }
+    newSearch = e => {
+        this.setState({ value: e.target.value });
     }
 
-    // search() {
-    //     console.log('this.state', this.state);
-    // }
+    submit = e => {
+        console.log(`New Search: ${this.state.value}`);
+        e.preventDefault();
+    }
 
-    handleClick(buttonText) {
+    handleClick = (buttonText) => {
         console.log(`${buttonText} Clicked`);
         if (buttonText === 'geolocation') {
             console.log(`${buttonText} Clicked2`);
@@ -60,7 +56,7 @@ class Search extends Component {
         this.setState({ redirect: true });
     }
 
-    handleEnterKeyPress(event) {
+    handleEnterKeyPress = (event) => {
         if (event.keyCode === 13) {
             let searchStr = event.target.value;
             console.log(`${searchStr}<ENTER>`);
@@ -107,33 +103,16 @@ class Search extends Component {
             return (
                 <div>
                     <div>
-                        {/* <SearchIcon />
-                        <TextField className="textBox"
-                            variant="filled"
-                            id="input-with-icon-grid"
-                            label="Search locations"
-                            style={{ minWidth: 350, maxWidth: 800 }}
-                            onChange={this.handleTextChange}
-                            // onChange={ (event) => setText( event.target.value )}
-                            onKeyDown={ this.handleEnterKeyPress }
-                            value={ this.state.text }
-                        /> */}
-                        <TextField
-                            id="search"
-                            label="Search locations"
-                            placeholder="Search locations"
-                            onChange={this.handleTextChange}
-                            // onChange={ (event) => setText( event.target.value )}
-                            onKeyDown={this.handleEnterKeyPress}
-                            value={this.state.text}
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <SearchIcon />
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
+                        <form onSubmit={this.submit} oValidate autoComplete="off">
+                            <TextField type="search"
+                                placeholder="Search locations"
+                                inputProps={{ 'aria-label': 'Search locations' }}
+                                onChange={this.newSearch}
+                            />
+                            <IconButton type="submit" aria-label="search">
+                                <SearchIcon />
+                            </IconButton>
+                        </form>
                     </div>
                     <div>
                         <Button color="primary" startIcon={<GpsFixedTwoToneIcon />} onClick={() => this.handleClick('geolocation')}>
